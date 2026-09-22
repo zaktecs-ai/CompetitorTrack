@@ -136,3 +136,92 @@ cannot be confirmed without buying a proxy. The geo-suspect safeguard (§A6.5) i
 still implemented and unit-tested with `respx`, because it must exist *before* a
 proxy is ever switched on, not after. The empirical geo-pricing question stays open
 and is recorded as a residual risk.
+
+---
+
+### D0.9 — `classify()` takes an expectation; one contract per endpoint
+
+**Context.** The first shipped probe applied one success contract — "200 + parseable
+JSON containing a `products` key" — to every endpoint it read. `/robots.txt` is
+`text/plain` and `/meta.json` is JSON without a `products` key, so both were
+recorded as `outcome: "error", error_code: "endpoint_disabled"` on all 7 stores
+despite returning healthy 200s. The production evidence files carry this defect.
+
+**Impact.** Zero effect on any decision: the downstream code branches on `status`,
+not `outcome`, so robots rules were evaluated and currencies captured correctly
+throughout (`robots.evaluation` and `meta.currency` are populated and right in
+every record). The damage was to the *readability and credibility* of the artifact —
+a results file in which every store appears to fail two of three fetches invites
+the whole dataset to be dismissed.
+
+**Decision.** `classify(..., expect=...)` selects the contract per endpoint:
+
+| `expect` | Success means |
+|---|---|
+| `feed` | 200 + parseable JSON + a `products` key |
+| `json` | 200 + parseable JSON of any shape |
+| `text` | 200 with a non-empty body |
+
+**Consequence.** Carry the same discipline into the production engine: §A6.3's
+matrix is the **feed** classifier and must not be reused for `/robots.txt` or
+`/meta.json`. A shared "classify any response" helper is how this defect would
+reappear in `apps/api`.
+
+---
+
+### D0.10 — Geo-pricing answered by cross-continent comparison, not by proxy
+
+**Context.** §A6.5 required a direct-vs-proxy price diff to settle whether
+`/products.json` is geo-localised. No proxy is owned (D0.8), so that test was
+recorded as permanently deferred.
+
+**Observation.** Two runs existed from different continents 16 minutes apart — the
+control run from AS14618 (Amazon, Ashburn US) and the production run from AS31898
+(Oracle, Frankfurt DE). All seven page-1 responses were **byte-identical** across
+both, and every derived statistic (variant counts, `compare_at` rates, zero-price
+counts) matched exactly.
+
+**Decision.** Treat the geo-localisation question as **answered in the negative for
+this store set**, on stronger evidence than the planned proxy diff would have given
+(byte-identity implies same currency, ordering and `compare_at` values, not merely
+similar prices). Two further consequences are adopted:
+
+1. The committed `tests/fixtures/phase0/` files, captured on the control IP, are
+   **verified to be bit-for-bit what production receives**. This removes the
+   caveat recorded under D0.4.
+2. **§A6.5's geo-suspect safeguard is still built and tested.** It is retained not
+   because localisation was observed but because two datacenter IPs in US-East and
+   EU-Central do not cover every market, a Shopify Markets store could still
+   localise, and the rule costs literally nothing while `SCRAPER_PROXY_MODE=off`
+   (transport never changes, so it cannot fire). It is the only thing standing
+   between a future proxy purchase and a store-wide false PRICE_DROP storm.
+
+**Rejected alternative.** Dropping the geo-suspect rule as "empirically
+unnecessary". A safeguard whose trigger condition is *"the thing we just measured
+has changed"* must exist before the change, not after.
+
+---
+
+### D0.11 — Honest bot User-Agent adopted as the default
+
+**Context.** Both production passes returned 7/7 with zero blocks and zero 429s, so
+neither UA is forced by access. §A6.2 left the choice to the founder on Phase 0
+evidence.
+
+**Decision.** `SCRAPER_USER_AGENT = CompetitorTrackBot/1.0 (+{PUBLIC_ORIGIN}/bot)`.
+
+**Rationale.** Zero measured access cost; robots.txt allowed the feed under the
+`competitortrackbot` token on all 7 stores; it is defensible if a merchant asks who
+we are; and it is a prerequisite for Web Bot Auth (§A6.8) and the higher Shopify
+limits that come with signing.
+
+**Accepted trade-off, stated plainly.** An identified crawler can be blocked by name
+in `robots.txt`, and we will honour it. The browser UA avoids that only by being
+indistinguishable from a human, which is exactly why it is not defensible. Revisit
+only if a material share of target stores begin disallowing the token.
+
+**Outstanding.** The UA currently embeds the placeholder
+`https://competitortrack.example.com`. It must be regenerated with the real
+`PUBLIC_ORIGIN` once a domain exists, and the `/bot` page it advertises must be
+live before production traffic — otherwise the UA points at nothing, which is
+worse than an anonymous one.

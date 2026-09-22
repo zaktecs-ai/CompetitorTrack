@@ -200,19 +200,35 @@ def classify(
     headers: Any,
     body_text: str,
     origin_host: str,
+    expect: str = "feed",
 ) -> Tuple[str, Optional[str], Optional[Any]]:
     """
     Return (outcome, error_code, parsed_json).
 
     outcome is one of: ok | redirect_same_domain | error
+
+    `expect` selects the success contract for the endpoint being read. The
+    product-feed contract ("200 + JSON + a products array") must NOT be applied
+    to /robots.txt (text/plain) or /meta.json (JSON with no products key) —
+    doing so labels perfectly good 200 responses as endpoint_disabled and makes
+    the results file read as if every store had failed:
+        feed -> 200 + parseable JSON + a "products" key
+        json -> 200 + parseable JSON of any shape
+        text -> 200 with a body
     """
     location = headers.get("location") or ""
 
     if status == 200:
+        if expect == "text":
+            if not body_text:
+                return "error", ERR_PARSE, None
+            return "ok", None, None
         try:
             parsed = json.loads(body_text)
         except (ValueError, TypeError):
             return "error", ERR_ENDPOINT_DISABLED, None
+        if expect == "json":
+            return "ok", None, parsed
         if not isinstance(parsed, dict) or "products" not in parsed:
             # A JSON body that is not the product feed shape is equally unusable.
             return "error", ERR_ENDPOINT_DISABLED, None
@@ -253,7 +269,7 @@ async def fetch(
     url: str,
     delay: float,
     max_hops: int = 2,
-    expect_json: bool = True,
+    expect: str = "feed",
 ) -> Dict[str, Any]:
     """
     GET `url`, classifying redirects ourselves. Returns a record that is safe to
@@ -289,7 +305,7 @@ async def fetch(
             return record
 
         elapsed_ms = int((time.monotonic() - started) * 1000)
-        body_text = resp.text if expect_json else ""
+        body_text = resp.text
         record["status"] = resp.status_code
         record["elapsed_ms"] = elapsed_ms
         record["headers"] = picked_headers(resp.headers)
@@ -297,7 +313,7 @@ async def fetch(
         record["final_url"] = current
 
         outcome, error_code, parsed = classify(
-            resp.status_code, resp.headers, body_text, origin_host
+            resp.status_code, resp.headers, body_text, origin_host, expect
         )
 
         if outcome == "redirect_same_domain" and hop_index < max_hops:
@@ -638,7 +654,7 @@ async def probe_store(
     }
 
     # --- robots.txt -------------------------------------------------------- #
-    robots_rec = await fetch(client, base + "/robots.txt", delay, expect_json=True)
+    robots_rec = await fetch(client, base + "/robots.txt", delay, expect="text")
     robots_text = robots_rec.pop("_body_text", "") or ""
     robots_rec.pop("_parsed", None)
     store["robots"] = {"fetch": robots_rec}
@@ -685,7 +701,7 @@ async def probe_store(
     await polite_sleep(delay)
 
     # --- /meta.json -------------------------------------------------------- #
-    meta_rec = await fetch(client, base + "/meta.json", delay)
+    meta_rec = await fetch(client, base + "/meta.json", delay, expect="json")
     meta_body = meta_rec.pop("_body_text", "") or ""
     meta_parsed = meta_rec.pop("_parsed", None)
     meta_json: Optional[Dict[str, Any]] = None
