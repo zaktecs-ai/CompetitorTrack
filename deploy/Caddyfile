@@ -1,0 +1,51 @@
+# CompetitorTrack edge configuration (§A12).
+#
+# One origin for the whole product: /api/* goes to FastAPI, everything else to
+# Next.js. That is what removes CORS from the design and lets httpOnly cookies
+# work with no cross-site handling (§A1, §A11).
+
+{
+	email {$ACME_EMAIL}
+
+	# Empty ACME_CA means production Let's Encrypt, which is why the production
+	# directory is the default here: `acme_ca` with an empty argument would be a
+	# syntax error, so the spec's "empty = production" is expressed as this
+	# default instead (D1.5). Keep the staging URL in deploy/.env until go-live —
+	# Let's Encrypt allows only 5 duplicate certificates per week, and iterating
+	# against production burns that budget in one afternoon.
+	acme_ca {$ACME_CA:https://acme-v02.api.letsencrypt.org/directory}
+}
+
+{$SERVER_NAME} {
+	encode zstd gzip
+
+	header {
+		# Don't advertise the server software.
+		-Server
+
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+		X-Frame-Options DENY
+
+		# HSTS is added at go-live (P6), once production certificates are
+		# confirmed working. Sending it while on staging certificates would pin
+		# browsers to a hostname whose certificate they refuse.
+		# Strict-Transport-Security "max-age=31536000; includeSubDomains"
+	}
+
+	# FastAPI owns /api/* — including auth, which sets the cookies. The prefix is
+	# NOT stripped: the API mounts its routes under /api itself, so the path the
+	# browser used is the path FastAPI sees.
+	handle /api/* {
+		reverse_proxy api:8000
+	}
+
+	handle {
+		reverse_proxy web:3000
+	}
+
+	log {
+		output stdout
+		format json
+	}
+}
