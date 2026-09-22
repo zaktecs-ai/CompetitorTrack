@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Phase 0 probe output — the committed artifact is the reviewed one in docs/.
+# Ad-hoc runs on the server should not be committed by accident.
+/phase0_results*.json
+/phase0_summary.txt
+/prescreen*.json
+
+# Secrets — never committed
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Node (from P1 onward)
+node_modules/
+.next/
+out/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

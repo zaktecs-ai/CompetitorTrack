@@ -1,0 +1,25 @@
+# CompetitorTrack — Phase 0 CANDIDATE store list (pre-screen input)
+# Beauty / skincare Shopify storefronts across three size tiers.
+# This list is deliberately longer than 6: the pre-screen drops any store whose
+# robots.txt disallows the product feed (P0 task 2), and the surviving 6 become
+# the Phase 0 set.
+#
+# Format: domain [collection-handle]   # tier:<small|medium|large>
+
+# --- large / Shopify Plus ------------------------------------------------- #
+colourpop.com                 # tier:large
+glossier.com                  # tier:large
+kyliecosmetics.com            # tier:large
+fentybeauty.com               # tier:large
+
+# --- medium --------------------------------------------------------------- #
+youthtothepeople.com          # tier:medium
+theinkeylist.com              # tier:medium
+kravebeauty.com               # tier:medium
+
+# --- small / indie -------------------------------------------------------- #
+herbivorebotanicals.com       # tier:small
+saltandstone.com              # tier:small
+versedskin.com                # tier:small
+necessaire.com                # tier:small
+mytopicals.com                # tier:small

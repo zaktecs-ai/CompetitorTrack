@@ -1,0 +1,2441 @@
+{
+  "schema": "competitortrack.phase0/1",
+  "generated_at": "2026-09-22T06:58:49+00:00",
+  "run": {
+    "ua_mode": "browser",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+    "robots_agent_token": "mozilla",
+    "transport": "direct",
+    "proxy": null,
+    "delay_seconds": 2.5,
+    "max_pages_probed": 4,
+    "quick": false,
+    "fixtures_dir": "tests/fixtures/phase0",
+    "fixtures_max_pages": 1,
+    "ca_bundle": "/etc/pki/tls/certs/ca-bundle.crt",
+    "tls_verification": "enabled (custom CA bundle)",
+    "python": "3.9.25",
+    "httpx": "0.28.1",
+    "host_platform": "Linux-6.18.49-x86_64-with-glibc2.34",
+    "hostname": "bfe09045-746"
+  },
+  "stores": [
+    {
+      "domain": "colourpop.com",
+      "collection_handle": "",
+      "tier": "large",
+      "feed_path": "/products.json",
+      "probed_at": "2026-09-22T06:58:50+00:00",
+      "robots": {
+        "fetch": {
+          "requested_url": "https://colourpop.com/robots.txt",
+          "final_url": "https://colourpop.com/robots.txt",
+          "status": 200,
+          "outcome": "error",
+          "error_code": "endpoint_disabled",
+          "elapsed_ms": 103,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "text/plain; charset=utf-8",
+            "cf-ray": "a3ef6c6a0fa0c950-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=39, db;dur=9, db_async;dur=2.774, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", theme;desc=\"131341811794\", pageType;desc=\"robots\", servedBy;desc=\"jkwg\", requestID;desc=\"133e7374-be07-404c-830d-46e54ce36528-1790060330\", _y;desc=\"c8ba3327-f529-4890-853c-03d520b55bc5\", _s;desc=\"c9ec44f2-a526-4728-8103-4257c859c3d9\", _cmp;desc=\"3.AMPS_USVA_f_f_7GwC6oG8T8KmNpWEK1Pmxw\", _ye;desc=\"1821617930\", _se;desc=\"1790062130\", compressionLevel;desc=\"5\"",
+            "x-request-id": "133e7374-be07-404c-830d-46e54ce36528-1790060330",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 3614
+        },
+        "policy": "rules_read",
+        "evaluation": {
+          "agent_token_used": "mozilla",
+          "crawl_delay": null,
+          "request_rate": "",
+          "allows": {
+            "/products.json": true
+          },
+          "mentions_products_json": false,
+          "n_lines": 116
+        }
+      },
+      "meta": {
+        "fetch": {
+          "requested_url": "https://colourpop.com/meta.json",
+          "final_url": "https://colourpop.com/meta.json",
+          "status": 200,
+          "outcome": "error",
+          "error_code": "endpoint_disabled",
+          "elapsed_ms": 138,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef6c7e1c67e762-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=68, db;dur=26, db_async;dur=2.619, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"wdl7\", requestID;desc=\"31049260-9634-4313-a8ad-d5bb4f653170-1790060333\", _y;desc=\"c8ba3327-f529-4890-853c-03d520b55bc5\", _s;desc=\"c9ec44f2-a526-4728-8103-4257c859c3d9\", _cmp;desc=\"3.AMPS_USVA_f_f_7GwC6oG8T8KmNpWEK1Pmxw_%7B%7D\", _ye;desc=\"1821617933\", _se;desc=\"1790062133\", compressionLevel;desc=\"5\", compressionTime;dur=0.215",
+            "x-request-id": "31049260-9634-4313-a8ad-d5bb4f653170-1790060333",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 1565
+        },
+        "currency": "USD",
+        "shop_name": "ColourPop",
+        "country": "US",
+        "is_shopify_by_header": true,
+        "keys": [
+          "city",
+          "country",
+          "currency",
+          "description",
+          "domain",
+          "id",
+          "money_format",
+          "myshopify_domain",
+          "name",
+          "offers_shop_pay_installments",
+          "province",
+          "published_collections_count",
+          "published_products_count",
+          "ships_to_countries",
+          "shopify_pay_enabled_card_brands",
+          "url"
+        ]
+      },
+      "limit1": {
+        "fetch": {
+          "requested_url": "https://colourpop.com/products.json?limit=1",
+          "final_url": "https://colourpop.com/products.json?limit=1",
+          "status": 200,
+          "outcome": "ok",
+          "error_code": null,
+          "elapsed_ms": 145,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef6c8d8ca6c950-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=70;desc=\"gc:3\", db;dur=16, db_async;dur=10.769, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"vp2w\", requestID;desc=\"cc73c2b4-5490-42e4-9005-381ac26a68d1-1790060336\", _y;desc=\"c8ba3327-f529-4890-853c-03d520b55bc5\", _s;desc=\"c9ec44f2-a526-4728-8103-4257c859c3d9\", _cmp;desc=\"3.AMPS_USVA_f_f_7GwC6oG8T8KmNpWEK1Pmxw_%7B%7D\", _ye;desc=\"1821617936\", _se;desc=\"1790062136\", compressionLevel;desc=\"5\", compressionTime;dur=0.276",
+            "x-request-id": "cc73c2b4-5490-42e4-9005-381ac26a68d1-1790060336",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 4233
+        },
+        "n_products": 1
+      },
+      "pages": {
+        "page1": {
+          "fetch": {
+            "requested_url": "https://colourpop.com/products.json?limit=250&page=1",
+            "final_url": "https://colourpop.com/products.json?limit=250&page=1",
+            "status": 200,
+            "outcome": "ok",
+            "error_code": null,
+            "elapsed_ms": 403,
+            "headers": {
+              "server": "cloudflare",
+              "powered-by": "Shopify",
+              "content-type": "application/json; charset=utf-8",
+              "cf-ray": "a3ef6c9d4b10e762-IAD",
+              "cf-cache-status": "DYNAMIC",
+              "server-timing": "processing;dur=309;desc=\"gc:29\", db;dur=12, db_async;dur=95.273, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"m78n\", requestID;desc=\"62341601-0895-4b2f-80c6-0750d8f5ee10-1790060338\", _y;desc=\"c8ba3327-f529-4890-853c-03d520b55bc5\", _s;desc=\"c9ec44f2-a526-4728-8103-4257c859c3d9\", _cmp;desc=\"3.AMPS_USVA_f_f_7GwC6oG8T8KmNpWEK1Pmxw_%7B%7D\", _ye;desc=\"1821617939\", _se;desc=\"1790062139\", compressionLevel;desc=\"5\", compressionTime;dur=14.99",
+              "x-request-id": "62341601-0895-4b2f-80c6-0750d8f5ee10-1790060338",
+              "x-frame-options": "DENY"
+            },
+            "redirect_hops": [],
+            "body_bytes": 1036897
+          },
+          "n_products": 250,
+          "stats": {
+            "n_products": 250,
+            "n_variants": 250,
+            "product_ids_sample": [
+              7653442781266,
+              7653442486354,
+              7653442224210,
+              7653441896530,
+              7653441339474
+            ],
+            "product_ids_count": 250,
+            "available_key_present_pct": 100.0,
+            "compare_at_key_present_pct": 100.0,
+            "compare_at_non_null_pct": 0.8,
+            "inventory_quantity_present_pct": 0.0,
+            "variant_updated_at_present_pct": 100.0,
+            "product_image_present_pct": 100.0,
+            "product_published_at_present_pct": 100.0,
+            "product_updated_at_present_pct": 100.0,
+            "price_parse_ok": 250,
+            "price_parse_fail": 0,
+            "price_parse_fail_pct": 0.0,
+            "zero_price_variants": 0,
+            "price_value_types": {
+              "str": 250
+            },
+            "variant_currency_field_seen": null
+          }
+        },
+        "page2": {
+          "fetch": {
+            "requested_url": "https://colourpop.com/products.json?limit=250&page=2",
+            "final_url": "https://colourpop.com/products.json?limit=250&page=2",
+            "status": 200,
+            "outcome": "ok",
+            "error_code": null,
+            "elapsed_ms": 393,
+            "headers": {
+              "server": "cloudflare",
+              "powered-by": "Shopify",
+              "content-type": "application/json; charset=utf-8",
+              "cf-ray": "a3ef6cb09e36e762-IAD",
+              "cf-cache-status": "DYNAMIC",
+              "server-timing": "processing;dur=291;desc=\"gc:14\", db;dur=10, db_async;dur=98.915, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"p9k9\", requestID;desc=\"d03abe15-27d2-4410-b1a2-0f06ce42d3ac-1790060341\", _y;desc=\"c8ba3327-f529-4890-853c-03d520b55bc5\", _s;desc=\"c9ec44f2-a526-4728-8103-4257c859c3d9\", _cmp;desc=\"3.AMPS_USVA_f_f_7GwC6oG8T8KmNpWEK1Pmxw_%7B%7D\", _ye;desc=\"1821617942\", _se;desc=\"1790062142\", compressionLevel;desc=\"5\", compressionTime;dur=19.205",
+              "x-request-id": "d03abe15-27d2-4410-b1a2-0f06ce42d3ac-1790060341",
+              "x-frame-options": "DENY"
+            },
+            "redirect_hops": [],
+            "body_bytes": 989759
+          },
+          "n_products": 250,
+          "stats": {
+            "n_products": 250,
+            "n_variants": 250,
+            "product_ids_sample": [
+              7494877839442,
+              7494877446226,
+              7494876692562,
+              7505764515922,
+              7505764450386
+            ],
+            "product_ids_count": 250,
+            "available_key_present_pct": 100.0,
+            "compare_at_key_present_pct": 100.0,
+            "compare_at_non_null_pct": 2.0,
+            "inventory_quantity_present_pct": 0.0,
+            "variant_updated_at_present_pct": 100.0,
+            "product_image_present_pct": 100.0,
+            "product_published_at_present_pct": 100.0,
+            "product_updated_at_present_pct": 100.0,
+            "price_parse_ok": 250,
+            "price_parse_fail": 0,
+            "price_parse_fail_pct": 0.0,
+            "zero_price_variants": 0,
+            "price_value_types": {
+              "str": 250
+            },
+            "variant_currency_field_seen": null
+          }
+        },
+        "page3": {
+          "fetch": {
+            "requested_url": "https://colourpop.com/products.json?limit=250&page=3",
+            "final_url": "https://colourpop.com/products.json?limit=250&page=3",
+            "status": 200,
+            "outcome": "ok",
+            "error_code": null,
+            "elapsed_ms": 424,
+            "headers": {
+              "server": "cloudflare",
+              "powered-by": "Shopify",
+              "content-type": "application/json; charset=utf-8",
+              "cf-ray": "a3ef6cc58a2de762-IAD",
+              "cf-cache-status": "DYNAMIC",
+              "server-timing": "processing;dur=333;desc=\"gc:20\", db;dur=14, db_async;dur=102.548, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"j6pw\", requestID;desc=\"721b93b2-4f4f-479b-b84c-83323a3e0312-1790060345\", _y;desc=\"c8ba3327-f529-4890-853c-03d520b55bc5\", _s;desc=\"c9ec44f2-a526-4728-8103-4257c859c3d9\", _cmp;desc=\"3.AMPS_USVA_f_f_7GwC6oG8T8KmNpWEK1Pmxw_%7B%7D\", _ye;desc=\"1821617945\", _se;desc=\"1790062145\", compressionLevel;desc=\"5\", compressionTime;dur=20.637",
+              "x-request-id": "721b93b2-4f4f-479b-b84c-83323a3e0312-1790060345",
+              "x-frame-options": "DENY"
+            },
+            "redirect_hops": [],
+            "body_bytes": 948361
+          },
+          "n_products": 250,
+          "stats": {
+            "n_products": 250,
+            "n_variants": 250,
+            "product_ids_sample": [
+              7397700075602,
+              7397699780690,
+              7397683331154,
+              7397682937938,
+              7385884065874
+            ],
+            "product_ids_count": 250,
+            "available_key_present_pct": 100.0,
+            "compare_at_key_present_pct": 100.0,
+            "compare_at_non_null_pct": 5.2,
+            "inventory_quantity_present_pct": 0.0,
+            "variant_updated_at_present_pct": 100.0,
+            "product_image_present_pct": 100.0,
+            "product_published_at_present_pct": 100.0,
+            "product_updated_at_present_pct": 100.0,
+            "price_parse_ok": 250,
+            "price_parse_fail": 0,
+            "price_parse_fail_pct": 0.0,
+            "zero_price_variants": 0,
+            "price_value_types": {
+              "str": 250
+            },
+            "variant_currency_field_seen": null
+          }
+        },
+        "page4": {
+          "fetch": {
+            "requested_url": "https://colourpop.com/products.json?limit=250&page=4",
+            "final_url": "https://colourpop.com/products.json?limit=250&page=4",
+            "status": 200,
+            "outcome": "ok",
+            "error_code": null,
+            "elapsed_ms": 467,
+            "headers": {
+              "server": "cloudflare",
+              "powered-by": "Shopify",
+              "content-type": "application/json; charset=utf-8",
+              "cf-ray": "a3ef6cdc2b41e762-IAD",
+              "cf-cache-status": "DYNAMIC",
+              "server-timing": "processing;dur=378;desc=\"gc:45\", db;dur=16, db_async;dur=126.139, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"w6fc\", requestID;desc=\"0b75e0dd-0a8e-45af-89dc-91bad3074756-1790060348\", _y;desc=\"c8ba3327-f529-4890-853c-03d520b55bc5\", _s;desc=\"c9ec44f2-a526-4728-8103-4257c859c3d9\", _cmp;desc=\"3.AMPS_USVA_f_f_7GwC6oG8T8KmNpWEK1Pmxw_%7B%7D\", _ye;desc=\"1821617949\", _se;desc=\"1790062149\", compressionLevel;desc=\"5\", compressionTime;dur=52.749",
+              "x-request-id": "0b75e0dd-0a8e-45af-89dc-91bad3074756-1790060348",
+              "x-frame-options": "DENY"
+            },
+            "redirect_hops": [],
+            "body_bytes": 946413
+          },
+          "n_products": 250,
+          "stats": {
+            "n_products": 250,
+            "n_variants": 250,
+            "product_ids_sample": [
+              6894518239314,
+              6894516961362,
+              6894137966674,
+              6894137475154,
+              6894137016402
+            ],
+            "product_ids_count": 250,
+            "available_key_present_pct": 100.0,
+            "compare_at_key_present_pct": 100.0,
+            "compare_at_non_null_pct": 0.4,
+            "inventory_quantity_present_pct": 0.0,
+            "variant_updated_at_present_pct": 100.0,
+            "product_image_present_pct": 100.0,
+            "product_published_at_present_pct": 100.0,
+            "product_updated_at_present_pct": 100.0,
+            "price_parse_ok": 250,
+            "price_parse_fail": 0,
+            "price_parse_fail_pct": 0.0,
+            "zero_price_variants": 0,
+            "price_value_types": {
+              "str": 250
+            },
+            "variant_currency_field_seen": null
+          }
+        }
+      },
+      "since_id_probe": {
+        "fetch": {
+          "requested_url": "https://colourpop.com/products.json?limit=250&since_id=13422428185",
+          "final_url": "https://colourpop.com/products.json?limit=250&since_id=13422428185",
+          "status": 200,
+          "outcome": "ok",
+          "error_code": null,
+          "elapsed_ms": 366,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef6d00c809e762-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=271, db;dur=6, db_async;dur=89.77, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"k5jt\", requestID;desc=\"0a69d84d-34a5-4e12-9198-2ad83e1fcfd5-1790060354\", _y;desc=\"c8ba3327-f529-4890-853c-03d520b55bc5\", _s;desc=\"c9ec44f2-a526-4728-8103-4257c859c3d9\", _cmp;desc=\"3.AMPS_USVA_f_f_7GwC6oG8T8KmNpWEK1Pmxw_%7B%7D\", _ye;desc=\"1821617954\", _se;desc=\"1790062154\", compressionLevel;desc=\"5\", compressionTime;dur=18.923",
+            "x-request-id": "0a69d84d-34a5-4e12-9198-2ad83e1fcfd5-1790060354",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 1036897
+        },
+        "anchor_id": 13422428185,
+        "first_ids": [
+          7653442781266,
+          7653442486354,
+          7653442224210,
+          7653441896530,
+          7653441339474
+        ],
+        "identical_to_page1_head": true,
+        "interpretation": "IGNORED (same head as page 1) \u2014 confirms no cursor pagination"
+      },
+      "www_variant": {
+        "host_tried": "www.colourpop.com",
+        "fetch": {
+          "requested_url": "https://www.colourpop.com/products.json?limit=1",
+          "final_url": "https://www.colourpop.com/products.json?limit=1",
+          "status": 200,
+          "outcome": "ok",
+          "error_code": null,
+          "elapsed_ms": 141,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef6d148ceed6ff-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=57;desc=\"gc:3\", db;dur=11, db_async;dur=6.772, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"q8b4\", requestID;desc=\"fe616dbd-60f7-4fbb-bfed-db849c29725b-1790060357\", _y;desc=\"c8ba3327-f529-4890-853c-03d520b55bc5\", _s;desc=\"c9ec44f2-a526-4728-8103-4257c859c3d9\", _cmp;desc=\"3.AMPS_USVA_f_f_7GwC6oG8T8KmNpWEK1Pmxw_%7B%7D\", _ye;desc=\"1821617957\", _se;desc=\"1790062157\", compressionLevel;desc=\"5\", compressionTime;dur=0.257",
+            "x-request-id": "fe616dbd-60f7-4fbb-bfed-db849c29725b-1790060357",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 4233
+        }
+      },
+      "field_stats": {
+        "n_products": 250,
+        "n_variants": 250,
+        "product_ids_sample": [
+          7653442781266,
+          7653442486354,
+          7653442224210,
+          7653441896530,
+          7653441339474
+        ],
+        "product_ids_count": 250,
+        "available_key_present_pct": 100.0,
+        "compare_at_key_present_pct": 100.0,
+        "compare_at_non_null_pct": 0.8,
+        "inventory_quantity_present_pct": 0.0,
+        "variant_updated_at_present_pct": 100.0,
+        "product_image_present_pct": 100.0,
+        "product_published_at_present_pct": 100.0,
+        "product_updated_at_present_pct": 100.0,
+        "price_parse_ok": 250,
+        "price_parse_fail": 0,
+        "price_parse_fail_pct": 0.0,
+        "zero_price_variants": 0,
+        "price_value_types": {
+          "str": 250
+        },
+        "variant_currency_field_seen": null
+      },
+      "page_repeat_detected": null,
+      "verdict": "feed_ok",
+      "notes": [
+        "CAP EXCEEDED: 4 pages x 250 fetched with a still-full last page, so the catalog is larger than max_pages*250=1000. Production marks this run PARTIAL with error_code=cap_exceeded and sets stores.exceeds_cap=true, which means it NEVER completes a baseline and emits NO variant/product alerts until a collection is picked. This store needs collection scoping to be trackable."
+      ],
+      "pagination": {
+        "pages_fetched": 4,
+        "total_products_seen": 1000,
+        "ended_on_empty_page": false,
+        "last_page_was_full": true,
+        "page_repeat_at": null,
+        "completeness": "partial_cap_exceeded",
+        "exceeds_cap": true
+      }
+    },
+    {
+      "domain": "fentybeauty.com",
+      "collection_handle": "",
+      "tier": "large",
+      "feed_path": "/products.json",
+      "probed_at": "2026-09-22T06:59:19+00:00",
+      "robots": {
+        "fetch": {
+          "requested_url": "https://fentybeauty.com/robots.txt",
+          "final_url": "https://fentybeauty.com/robots.txt",
+          "status": 200,
+          "outcome": "error",
+          "error_code": "endpoint_disabled",
+          "elapsed_ms": 209,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "text/plain; charset=utf-8",
+            "cf-ray": "a3ef6d20fa4dd6f7-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=46, db;dur=10, db_async;dur=1.321, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", theme;desc=\"188531015725\", pageType;desc=\"robots\", servedBy;desc=\"t8vf\", requestID;desc=\"ec866b9b-5993-4f83-b8d3-541f5e2d0d69-1790060359\", _y;desc=\"6850ea42-cb46-45a4-8837-c298662f3e84\", _s;desc=\"24b55224-4be6-4596-a729-993f1e49df6c\", _cmp;desc=\"3.AMPS_USVA_f_f_ixkuiACdQdy09i1EqOR2Jg\", _ye;desc=\"1821617959\", _se;desc=\"1790062159\", compressionLevel;desc=\"5\"",
+            "x-request-id": "ec866b9b-5993-4f83-b8d3-541f5e2d0d69-1790060359",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 10467
+        },
+        "policy": "rules_read",
+        "evaluation": {
+          "agent_token_used": "mozilla",
+          "crawl_delay": null,
+          "request_rate": "",
+          "allows": {
+            "/products.json": true
+          },
+          "mentions_products_json": false,
+          "n_lines": 416
+        }
+      },
+      "meta": {
+        "fetch": {
+          "requested_url": "https://fentybeauty.com/meta.json",
+          "final_url": "https://fentybeauty.com/meta.json",
+          "status": 200,
+          "outcome": "error",
+          "error_code": "endpoint_disabled",
+          "elapsed_ms": 147,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef6d338920d6f7-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=67;desc=\"gc:6\", db;dur=26, db_async;dur=0.888, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"dcjr\", requestID;desc=\"dc923de9-0623-4b1f-8e8f-198f47e328db-1790060362\", _y;desc=\"6850ea42-cb46-45a4-8837-c298662f3e84\", _s;desc=\"24b55224-4be6-4596-a729-993f1e49df6c\", _cmp;desc=\"3.AMPS_USVA_f_f_ixkuiACdQdy09i1EqOR2Jg_%7B%7D\", _ye;desc=\"1821617962\", _se;desc=\"1790062162\", compressionLevel;desc=\"5\", compressionTime;dur=0.199",
+            "x-request-id": "dc923de9-0623-4b1f-8e8f-198f47e328db-1790060362",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 1690
+        },
+        "currency": "USD",
+        "shop_name": "Fenty Beauty",
+        "country": "US",
+        "is_shopify_by_header": true,
+        "keys": [
+          "city",
+          "country",
+          "currency",
+          "description",
+          "domain",
+          "id",
+          "money_format",
+          "myshopify_domain",
+          "name",
+          "offers_shop_pay_installments",
+          "province",
+          "published_collections_count",
+          "published_products_count",
+          "ships_to_countries",
+          "shopify_pay_enabled_card_brands",
+          "url"
+        ]
+      },
+      "limit1": {
+        "fetch": {
+          "requested_url": "https://fentybeauty.com/products.json?limit=1",
+          "final_url": "https://fentybeauty.com/products.json?limit=1",
+          "status": 200,
+          "outcome": "ok",
+          "error_code": null,
+          "elapsed_ms": 157,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef6d45d88b8287-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=76;desc=\"gc:25\", db;dur=13, db_async;dur=2.142, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"zxbn\", requestID;desc=\"14a11f50-2bf8-4f0d-ad1d-81d1b5505e63-1790060365\", _y;desc=\"6850ea42-cb46-45a4-8837-c298662f3e84\", _s;desc=\"24b55224-4be6-4596-a729-993f1e49df6c\", _cmp;desc=\"3.AMPS_USVA_f_f_ixkuiACdQdy09i1EqOR2Jg_%7B%7D\", _ye;desc=\"1821617965\", _se;desc=\"1790062165\", compressionLevel;desc=\"5\", compressionTime;dur=21.554",
+            "x-request-id": "14a11f50-2bf8-4f0d-ad1d-81d1b5505e63-1790060365",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 4655
+        },
+        "n_products": 1
+      },
+      "pages": {
+        "page1": {
+          "fetch": {
+            "requested_url": "https://fentybeauty.com/products.json?limit=250&page=1",
+            "final_url": "https://fentybeauty.com/products.json?limit=250&page=1",
+            "status": 200,
+            "outcome": "ok",
+            "error_code": null,
+            "elapsed_ms": 129,
+            "headers": {
+              "server": "cloudflare",
+              "powered-by": "Shopify",
+              "content-type": "application/json; charset=utf-8",
+              "cf-ray": "a3ef6d52bc35d6f7-IAD",
+              "cf-cache-status": "DYNAMIC",
+              "server-timing": "processing;dur=36;desc=\"gc:2\", db;dur=7, db_async;dur=1.409, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"nz97\", requestID;desc=\"53f8ea60-263a-434a-a7b0-381a871580e8-1790060367\", _y;desc=\"6850ea42-cb46-45a4-8837-c298662f3e84\", _s;desc=\"24b55224-4be6-4596-a729-993f1e49df6c\", _cmp;desc=\"3.AMPS_USVA_f_f_ixkuiACdQdy09i1EqOR2Jg_%7B%7D\", _ye;desc=\"1821617967\", _se;desc=\"1790062167\", compressionLevel;desc=\"5\"",
+              "x-request-id": "53f8ea60-263a-434a-a7b0-381a871580e8-1790060367",
+              "x-frame-options": "DENY"
+            },
+            "redirect_hops": [],
+            "body_bytes": 1199231
+          },
+          "n_products": 250,
+          "stats": {
+            "n_products": 250,
+            "n_variants": 254,
+            "product_ids_sample": [
+              15364381638701,
+              15363501654061,
+              15358674108461,
+              15356318613549,
+              15356293251117
+            ],
+            "product_ids_count": 250,
+            "available_key_present_pct": 100.0,
+            "compare_at_key_present_pct": 100.0,
+            "compare_at_non_null_pct": 6.69,
+            "inventory_quantity_present_pct": 0.0,
+            "variant_updated_at_present_pct": 100.0,
+            "product_image_present_pct": 100.0,
+            "product_published_at_present_pct": 100.0,
+            "product_updated_at_present_pct": 100.0,
+            "price_parse_ok": 254,
+            "price_parse_fail": 0,
+            "price_parse_fail_pct": 0.0,
+            "zero_price_variants": 4,
+            "price_value_types": {
+              "str": 254
+            },
+            "variant_currency_field_seen": null
+          }
+        },
+        "page2": {
+          "fetch": {
+            "requested_url": "https://fentybeauty.com/products.json?limit=250&page=2",
+            "final_url": "https://fentybeauty.com/products.json?limit=250&page=2",
+            "status": 200,
+            "outcome": "ok",
+            "error_code": null,
+            "elapsed_ms": 318,
+            "headers": {
+              "server": "cloudflare",
+              "powered-by": "Shopify",
+              "content-type": "application/json; charset=utf-8",
+              "cf-ray": "a3ef6d670b71d6f7-IAD",
+              "cf-cache-status": "DYNAMIC",
+              "server-timing": "processing;dur=222;desc=\"gc:16\", db;dur=9, db_async;dur=75.278, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"r282\", requestID;desc=\"4ad4edc9-e384-453e-8bed-aadda61085db-1790060371\", _y;desc=\"6850ea42-cb46-45a4-8837-c298662f3e84\", _s;desc=\"24b55224-4be6-4596-a729-993f1e49df6c\", _cmp;desc=\"3.AMPS_USVA_f_f_ixkuiACdQdy09i1EqOR2Jg_%7B%7D\", _ye;desc=\"1821617971\", _se;desc=\"1790062171\", compressionLevel;desc=\"5\", compressionTime;dur=17.413",
+              "x-request-id": "4ad4edc9-e384-453e-8bed-aadda61085db-1790060371",
+              "x-frame-options": "DENY"
+            },
+            "redirect_hops": [],
+            "body_bytes": 1150900
+          },
+          "n_products": 250,
+          "stats": {
+            "n_products": 250,
+            "n_variants": 265,
+            "product_ids_sample": [
+              8447388385325,
+              8382504271917,
+              8381990600749,
+              8381990535213,
+              8381990240301
+            ],
+            "product_ids_count": 250,
+            "available_key_present_pct": 100.0,
+            "compare_at_key_present_pct": 100.0,
+            "compare_at_non_null_pct": 2.26,
+            "inventory_quantity_present_pct": 0.0,
+            "variant_updated_at_present_pct": 100.0,
+            "product_image_present_pct": 100.0,
+            "product_published_at_present_pct": 100.0,
+            "product_updated_at_present_pct": 100.0,
+            "price_parse_ok": 265,
+            "price_parse_fail": 0,
+            "price_parse_fail_pct": 0.0,
+            "zero_price_variants": 5,
+            "price_value_types": {
+              "str": 265
+            },
+            "variant_currency_field_seen": null
+          }
+        },
+        "page3": {
+          "fetch": {
+            "requested_url": "https://fentybeauty.com/products.json?limit=250&page=3",
+            "final_url": "https://fentybeauty.com/products.json?limit=250&page=3",
+            "status": 200,
+            "outcome": "ok",
+            "error_code": null,
+            "elapsed_ms": 323,
+            "headers": {
+              "server": "cloudflare",
+              "powered-by": "Shopify",
+              "content-type": "application/json; charset=utf-8",
+              "cf-ray": "a3ef6d78bc94d6f7-IAD",
+              "cf-cache-status": "DYNAMIC",
+              "server-timing": "processing;dur=230;desc=\"gc:17\", db;dur=8, db_async;dur=78.24, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"g8f8\", requestID;desc=\"6f646eff-bdd6-4bbf-9a7e-8b0cb23c2a2b-1790060373\", _y;desc=\"6850ea42-cb46-45a4-8837-c298662f3e84\", _s;desc=\"24b55224-4be6-4596-a729-993f1e49df6c\", _cmp;desc=\"3.AMPS_USVA_f_f_ixkuiACdQdy09i1EqOR2Jg_%7B%7D\", _ye;desc=\"1821617974\", _se;desc=\"1790062174\", compressionLevel;desc=\"5\", compressionTime;dur=20.312",
+              "x-request-id": "6f646eff-bdd6-4bbf-9a7e-8b0cb23c2a2b-1790060373",
+              "x-frame-options": "DENY"
+            },
+            "redirect_hops": [],
+            "body_bytes": 1293437
+          },
+          "n_products": 250,
+          "stats": {
+            "n_products": 250,
+            "n_variants": 310,
+            "product_ids_sample": [
+              7721974956077,
+              7721974825005,
+              7721974759469,
+              7898191593517,
+              7892177977389
+            ],
+            "product_ids_count": 250,
+            "available_key_present_pct": 100.0,
+            "compare_at_key_present_pct": 100.0,
+            "compare_at_non_null_pct": 35.48,
+            "inventory_quantity_present_pct": 0.0,
+            "variant_updated_at_present_pct": 100.0,
+            "product_image_present_pct": 100.0,
+            "product_published_at_present_pct": 100.0,
+            "product_updated_at_present_pct": 100.0,
+            "price_parse_ok": 310,
+            "price_parse_fail": 0,
+            "price_parse_fail_pct": 0.0,
+            "zero_price_variants": 0,
+            "price_value_types": {
+              "str": 310
+            },
+            "variant_currency_field_seen": null
+          }
+        },
+        "page4": {
+          "fetch": {
+            "requested_url": "https://fentybeauty.com/products.json?limit=250&page=4",
+            "final_url": "https://fentybeauty.com/products.json?limit=250&page=4",
+            "status": 200,
+            "outcome": "ok",
+            "error_code": null,
+            "elapsed_ms": 155,
+            "headers": {
+              "server": "cloudflare",
+              "powered-by": "Shopify",
+              "content-type": "application/json; charset=utf-8",
+              "cf-ray": "a3ef6d8f38918287-IAD",
+              "cf-cache-status": "DYNAMIC",
+              "server-timing": "processing;dur=49;desc=\"gc:3\", db;dur=5, db_async;dur=0.841, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"g9tj\", requestID;desc=\"b7348915-54ad-48d8-9064-958f94d17a47-1790060377\", _y;desc=\"6850ea42-cb46-45a4-8837-c298662f3e84\", _s;desc=\"24b55224-4be6-4596-a729-993f1e49df6c\", _cmp;desc=\"3.AMPS_USVA_f_f_ixkuiACdQdy09i1EqOR2Jg_%7B%7D\", _ye;desc=\"1821617977\", _se;desc=\"1790062177\", compressionLevel;desc=\"5\"",
+              "x-request-id": "b7348915-54ad-48d8-9064-958f94d17a47-1790060377",
+              "x-frame-options": "DENY"
+            },
+            "redirect_hops": [],
+            "body_bytes": 1272168
+          },
+          "n_products": 250,
+          "stats": {
+            "n_products": 250,
+            "n_variants": 321,
+            "product_ids_sample": [
+              7301190058029,
+              7301150933037,
+              7381655552045,
+              7387776679981,
+              7391142215725
+            ],
+            "product_ids_count": 250,
+            "available_key_present_pct": 100.0,
+            "compare_at_key_present_pct": 100.0,
+            "compare_at_non_null_pct": 16.82,
+            "inventory_quantity_present_pct": 0.0,
+            "variant_updated_at_present_pct": 100.0,
+            "product_image_present_pct": 100.0,
+            "product_published_at_present_pct": 100.0,
+            "product_updated_at_present_pct": 100.0,
+            "price_parse_ok": 321,
+            "price_parse_fail": 0,
+            "price_parse_fail_pct": 0.0,
+            "zero_price_variants": 0,
+            "price_value_types": {
+              "str": 321
+            },
+            "variant_currency_field_seen": null
+          }
+        }
+      },
+      "since_id_probe": {
+        "fetch": {
+          "requested_url": "https://fentybeauty.com/products.json?limit=250&since_id=5293586972717",
+          "final_url": "https://fentybeauty.com/products.json?limit=250&since_id=5293586972717",
+          "status": 200,
+          "outcome": "ok",
+          "error_code": null,
+          "elapsed_ms": 137,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef6da73d27d6f7-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=46, db;dur=8, db_async;dur=1.157, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"btkl\", requestID;desc=\"f262c5e8-16e3-408d-8876-99a35af8cdbe-1790060381\", _y;desc=\"6850ea42-cb46-45a4-8837-c298662f3e84\", _s;desc=\"24b55224-4be6-4596-a729-993f1e49df6c\", _cmp;desc=\"3.AMPS_USVA_f_f_ixkuiACdQdy09i1EqOR2Jg_%7B%7D\", _ye;desc=\"1821617981\", _se;desc=\"1790062181\", compressionLevel;desc=\"5\"",
+            "x-request-id": "f262c5e8-16e3-408d-8876-99a35af8cdbe-1790060381",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 1199231
+        },
+        "anchor_id": 5293586972717,
+        "first_ids": [
+          15364381638701,
+          15363501654061,
+          15358674108461,
+          15356318613549,
+          15356293251117
+        ],
+        "identical_to_page1_head": true,
+        "interpretation": "IGNORED (same head as page 1) \u2014 confirms no cursor pagination"
+      },
+      "www_variant": {
+        "host_tried": "www.fentybeauty.com",
+        "fetch": {
+          "requested_url": "https://www.fentybeauty.com/products.json?limit=1",
+          "final_url": "https://www.fentybeauty.com/products.json?limit=1",
+          "status": 200,
+          "outcome": "ok",
+          "error_code": null,
+          "elapsed_ms": 3428,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef6dd07d6dfa2f-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=43;desc=\"gc:3\", db;dur=6, db_async;dur=3.731, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"l6fk\", requestID;desc=\"2e2986cf-d53e-4845-bcc8-d6637ab17139-1790060387\", _y;desc=\"6850ea42-cb46-45a4-8837-c298662f3e84\", _s;desc=\"24b55224-4be6-4596-a729-993f1e49df6c\", _cmp;desc=\"3.AMPS_USVA_f_f_ixkuiACdQdy09i1EqOR2Jg_%7B%7D\", _ye;desc=\"1821617988\", _se;desc=\"1790062188\", compressionLevel;desc=\"5\", compressionTime;dur=0.256",
+            "x-request-id": "2e2986cf-d53e-4845-bcc8-d6637ab17139-1790060387",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 4655
+        }
+      },
+      "field_stats": {
+        "n_products": 250,
+        "n_variants": 254,
+        "product_ids_sample": [
+          15364381638701,
+          15363501654061,
+          15358674108461,
+          15356318613549,
+          15356293251117
+        ],
+        "product_ids_count": 250,
+        "available_key_present_pct": 100.0,
+        "compare_at_key_present_pct": 100.0,
+        "compare_at_non_null_pct": 6.69,
+        "inventory_quantity_present_pct": 0.0,
+        "variant_updated_at_present_pct": 100.0,
+        "product_image_present_pct": 100.0,
+        "product_published_at_present_pct": 100.0,
+        "product_updated_at_present_pct": 100.0,
+        "price_parse_ok": 254,
+        "price_parse_fail": 0,
+        "price_parse_fail_pct": 0.0,
+        "zero_price_variants": 4,
+        "price_value_types": {
+          "str": 254
+        },
+        "variant_currency_field_seen": null
+      },
+      "page_repeat_detected": null,
+      "verdict": "feed_ok",
+      "notes": [
+        "CAP EXCEEDED: 4 pages x 250 fetched with a still-full last page, so the catalog is larger than max_pages*250=1000. Production marks this run PARTIAL with error_code=cap_exceeded and sets stores.exceeds_cap=true, which means it NEVER completes a baseline and emits NO variant/product alerts until a collection is picked. This store needs collection scoping to be trackable."
+      ],
+      "pagination": {
+        "pages_fetched": 4,
+        "total_products_seen": 1000,
+        "ended_on_empty_page": false,
+        "last_page_was_full": true,
+        "page_repeat_at": null,
+        "completeness": "partial_cap_exceeded",
+        "exceeds_cap": true
+      }
+    },
+    {
+      "domain": "theinkeylist.com",
+      "collection_handle": "",
+      "tier": "medium",
+      "feed_path": "/products.json",
+      "probed_at": "2026-09-22T06:59:51+00:00",
+      "robots": {
+        "fetch": {
+          "requested_url": "https://theinkeylist.com/robots.txt",
+          "final_url": "https://uk.theinkeylist.com/robots.txt",
+          "status": 200,
+          "outcome": "error",
+          "error_code": "endpoint_disabled",
+          "elapsed_ms": 194,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "text/plain; charset=utf-8",
+            "cf-ray": "a3ef6df1fbb24b86-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=41;desc=\"gc:2\", db;dur=9, db_async;dur=2.815, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", theme;desc=\"157956210851\", pageType;desc=\"robots\", servedBy;desc=\"c25w\", requestID;desc=\"161525ad-8a04-4417-9094-c18b8a79e975-1790060393\", _y;desc=\"875d323d-0c7d-4128-8bcc-e37af6671306\", _s;desc=\"b35b4da2-33e6-42b2-8fab-723524d002bd\", _cmp;desc=\"3.AMPS_USVA_f_f_qHdMnhdNQSW00e949s4t-w\", _ye;desc=\"1821617993\", _se;desc=\"1790062193\", compressionLevel;desc=\"5\"",
+            "x-request-id": "161525ad-8a04-4417-9094-c18b8a79e975-1790060393",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [
+            {
+              "from": "https://theinkeylist.com/robots.txt",
+              "status": 301,
+              "location": "https://uk.theinkeylist.com/robots.txt"
+            }
+          ],
+          "body_bytes": 6547
+        },
+        "policy": "rules_read",
+        "evaluation": {
+          "agent_token_used": "mozilla",
+          "crawl_delay": null,
+          "request_rate": "",
+          "allows": {
+            "/products.json": true
+          },
+          "mentions_products_json": false,
+          "n_lines": 177
+        }
+      },
+      "meta": {
+        "fetch": {
+          "requested_url": "https://theinkeylist.com/meta.json",
+          "final_url": "https://theinkeylist.com/meta.json",
+          "status": 200,
+          "outcome": "error",
+          "error_code": "endpoint_disabled",
+          "elapsed_ms": 119,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef6e02df53e5c3-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=39, db;dur=9, db_async;dur=3.54, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"xfb5\", requestID;desc=\"040ac56c-a5f9-4278-908b-735ddd93f5a6-1790060395\", _y;desc=\"875d323d-0c7d-4128-8bcc-e37af6671306\", _s;desc=\"b35b4da2-33e6-42b2-8fab-723524d002bd\", _cmp;desc=\"3.AMPS_USVA_f_f_qHdMnhdNQSW00e949s4t-w_%7B%7D\", _ye;desc=\"1821617996\", _se;desc=\"1790062196\", compressionLevel;desc=\"5\", compressionTime;dur=0.142",
+            "x-request-id": "040ac56c-a5f9-4278-908b-735ddd93f5a6-1790060395",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 655
+        },
+        "currency": "GBP",
+        "shop_name": "INKEY UK",
+        "country": "GB",
+        "is_shopify_by_header": true,
+        "keys": [
+          "city",
+          "country",
+          "currency",
+          "description",
+          "domain",
+          "id",
+          "money_format",
+          "myshopify_domain",
+          "name",
+          "offers_shop_pay_installments",
+          "province",
+          "published_collections_count",
+          "published_products_count",
+          "ships_to_countries",
+          "shopify_pay_enabled_card_brands",
+          "url"
+        ]
+      },
+      "limit1": {
+        "fetch": {
+          "requested_url": "https://theinkeylist.com/products.json?limit=1",
+          "final_url": "https://theinkeylist.com/products.json?limit=1",
+          "status": 200,
+          "outcome": "ok",
+          "error_code": null,
+          "elapsed_ms": 118,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef6e150d3ee5c3-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=46;desc=\"gc:1\", db;dur=8, db_async;dur=9.014, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"hbmw\", requestID;desc=\"8d4f95d9-0262-46bb-9418-2006e609e784-1790060398\", _y;desc=\"875d323d-0c7d-4128-8bcc-e37af6671306\", _s;desc=\"b35b4da2-33e6-42b2-8fab-723524d002bd\", _cmp;desc=\"3.AMPS_USVA_f_f_qHdMnhdNQSW00e949s4t-w_%7B%7D\", _ye;desc=\"1821617998\", _se;desc=\"1790062198\", compressionLevel;desc=\"5\", compressionTime;dur=0.33",
+            "x-request-id": "8d4f95d9-0262-46bb-9418-2006e609e784-1790060398",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 5013
+        },
+        "n_products": 1
+      },
+      "pages": {
+        "page1": {
+          "fetch": {
+            "requested_url": "https://theinkeylist.com/products.json?limit=250&page=1",
+            "final_url": "https://theinkeylist.com/products.json?limit=250&page=1",
+            "status": 200,
+            "outcome": "ok",
+            "error_code": null,
+            "elapsed_ms": 268,
+            "headers": {
+              "server": "cloudflare",
+              "powered-by": "Shopify",
+              "content-type": "application/json; charset=utf-8",
+              "cf-ray": "a3ef6e249922e5c3-IAD",
+              "cf-cache-status": "DYNAMIC",
+              "server-timing": "processing;dur=169;desc=\"gc:6\", db;dur=13, db_async;dur=38.717, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"fcnb\", requestID;desc=\"b6ebd0c0-5845-475b-b62a-f41cb802f9bc-1790060401\", _y;desc=\"875d323d-0c7d-4128-8bcc-e37af6671306\", _s;desc=\"b35b4da2-33e6-42b2-8fab-723524d002bd\", _cmp;desc=\"3.AMPS_USVA_f_f_qHdMnhdNQSW00e949s4t-w_%7B%7D\", _ye;desc=\"1821618001\", _se;desc=\"1790062201\", compressionLevel;desc=\"5\", compressionTime;dur=17.537",
+              "x-request-id": "b6ebd0c0-5845-475b-b62a-f41cb802f9bc-1790060401",
+              "x-frame-options": "DENY"
+            },
+            "redirect_hops": [],
+            "body_bytes": 836467
+          },
+          "n_products": 137,
+          "stats": {
+            "n_products": 137,
+            "n_variants": 146,
+            "product_ids_sample": [
+              9222134825123,
+              9222855327907,
+              9222855196835,
+              9222855098531,
+              9227012210851
+            ],
+            "product_ids_count": 137,
+            "available_key_present_pct": 100.0,
+            "compare_at_key_present_pct": 100.0,
+            "compare_at_non_null_pct": 53.42,
+            "inventory_quantity_present_pct": 0.0,
+            "variant_updated_at_present_pct": 100.0,
+            "product_image_present_pct": 100.0,
+            "product_published_at_present_pct": 100.0,
+            "product_updated_at_present_pct": 100.0,
+            "price_parse_ok": 146,
+            "price_parse_fail": 0,
+            "price_parse_fail_pct": 0.0,
+            "zero_price_variants": 4,
+            "price_value_types": {
+              "str": 146
+            },
+            "variant_currency_field_seen": null
+          }
+        },
+        "page2": {
+          "fetch": {
+            "requested_url": "https://theinkeylist.com/products.json?limit=250&page=2",
+            "final_url": "https://theinkeylist.com/products.json?limit=250&page=2",
+            "status": 200,
+            "outcome": "ok",
+            "error_code": null,
+            "elapsed_ms": 104,
+            "headers": {
+              "server": "cloudflare",
+              "powered-by": "Shopify",
+              "content-type": "application/json; charset=utf-8",
+              "cf-ray": "a3ef6e345ffce5c3-IAD",
+              "cf-cache-status": "DYNAMIC",
+              "server-timing": "processing;dur=40;desc=\"gc:1\", db;dur=11, db_async;dur=3.117, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"tf5d\", requestID;desc=\"19484c20-2cae-4af3-b5e9-3e9fdf1eeea7-1790060403\", _y;desc=\"875d323d-0c7d-4128-8bcc-e37af6671306\", _s;desc=\"b35b4da2-33e6-42b2-8fab-723524d002bd\", _cmp;desc=\"3.AMPS_USVA_f_f_qHdMnhdNQSW00e949s4t-w_%7B%7D\", _ye;desc=\"1821618003\", _se;desc=\"1790062203\", compressionLevel;desc=\"5\", compressionTime;dur=0.052",
+              "x-request-id": "19484c20-2cae-4af3-b5e9-3e9fdf1eeea7-1790060403",
+              "x-frame-options": "DENY"
+            },
+            "redirect_hops": [],
+            "body_bytes": 15
+          },
+          "n_products": 0,
+          "stats": {
+            "n_products": 0,
+            "n_variants": 0,
+            "product_ids_sample": [],
+            "product_ids_count": 0,
+            "available_key_present_pct": null,
+            "compare_at_key_present_pct": null,
+            "compare_at_non_null_pct": null,
+            "inventory_quantity_present_pct": null,
+            "variant_updated_at_present_pct": null,
+            "product_image_present_pct": null,
+            "product_published_at_present_pct": null,
+            "product_updated_at_present_pct": null,
+            "price_parse_ok": 0,
+            "price_parse_fail": 0,
+            "price_parse_fail_pct": null,
+            "zero_price_variants": 0,
+            "price_value_types": {},
+            "variant_currency_field_seen": null
+          },
+          "empty_page": true
+        }
+      },
+      "since_id_probe": {
+        "fetch": {
+          "requested_url": "https://theinkeylist.com/products.json?limit=250&since_id=4834931540103",
+          "final_url": "https://theinkeylist.com/products.json?limit=250&since_id=4834931540103",
+          "status": 200,
+          "outcome": "ok",
+          "error_code": null,
+          "elapsed_ms": 421,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef6e431dcee5c3-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=309;desc=\"gc:4\", db;dur=7, db_async;dur=56.599, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"xs5t\", requestID;desc=\"d4c81d7c-2b32-4a8a-99fe-2d85900cf3ec-1790060406\", _y;desc=\"875d323d-0c7d-4128-8bcc-e37af6671306\", _s;desc=\"b35b4da2-33e6-42b2-8fab-723524d002bd\", _cmp;desc=\"3.AMPS_USVA_f_f_qHdMnhdNQSW00e949s4t-w_%7B%7D\", _ye;desc=\"1821618006\", _se;desc=\"1790062206\", compressionLevel;desc=\"5\", compressionTime;dur=14.893",
+            "x-request-id": "d4c81d7c-2b32-4a8a-99fe-2d85900cf3ec-1790060406",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 836467
+        },
+        "anchor_id": 4834931540103,
+        "first_ids": [
+          9222134825123,
+          9222855327907,
+          9222855196835,
+          9222855098531,
+          9227012210851
+        ],
+        "identical_to_page1_head": true,
+        "interpretation": "IGNORED (same head as page 1) \u2014 confirms no cursor pagination"
+      },
+      "www_variant": {
+        "host_tried": "www.theinkeylist.com",
+        "fetch": {
+          "requested_url": "https://www.theinkeylist.com/products.json?limit=1",
+          "final_url": "https://www.theinkeylist.com/products.json?limit=1",
+          "status": 200,
+          "outcome": "ok",
+          "error_code": null,
+          "elapsed_ms": 301,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef6e51dc2205e4-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=51;desc=\"gc:2\", db;dur=13, db_async;dur=5.469, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"frhd\", requestID;desc=\"02d65e1a-53a2-47be-9340-03ed9109e60f-1790060408\", _y;desc=\"875d323d-0c7d-4128-8bcc-e37af6671306\", _s;desc=\"b35b4da2-33e6-42b2-8fab-723524d002bd\", _cmp;desc=\"3.AMPS_USVA_f_f_JrG7AUmXQWSp9mqajbwkzg\", _ye;desc=\"1821618008\", _se;desc=\"1790062208\", compressionLevel;desc=\"5\", compressionTime;dur=0.917",
+            "x-request-id": "02d65e1a-53a2-47be-9340-03ed9109e60f-1790060408",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 8370
+        }
+      },
+      "field_stats": {
+        "n_products": 137,
+        "n_variants": 146,
+        "product_ids_sample": [
+          9222134825123,
+          9222855327907,
+          9222855196835,
+          9222855098531,
+          9227012210851
+        ],
+        "product_ids_count": 137,
+        "available_key_present_pct": 100.0,
+        "compare_at_key_present_pct": 100.0,
+        "compare_at_non_null_pct": 53.42,
+        "inventory_quantity_present_pct": 0.0,
+        "variant_updated_at_present_pct": 100.0,
+        "product_image_present_pct": 100.0,
+        "product_published_at_present_pct": 100.0,
+        "product_updated_at_present_pct": 100.0,
+        "price_parse_ok": 146,
+        "price_parse_fail": 0,
+        "price_parse_fail_pct": 0.0,
+        "zero_price_variants": 4,
+        "price_value_types": {
+          "str": 146
+        },
+        "variant_currency_field_seen": null
+      },
+      "page_repeat_detected": null,
+      "verdict": "feed_ok",
+      "notes": [
+        "Catalog ended with an empty products array at page 2 (a COMPLETE run in production terms)."
+      ],
+      "pagination": {
+        "pages_fetched": 2,
+        "total_products_seen": 137,
+        "ended_on_empty_page": true,
+        "last_page_was_full": false,
+        "page_repeat_at": null,
+        "completeness": "complete",
+        "exceeds_cap": false
+      }
+    },
+    {
+      "domain": "kravebeauty.com",
+      "collection_handle": "",
+      "tier": "medium",
+      "feed_path": "/products.json",
+      "probed_at": "2026-09-22T07:00:11+00:00",
+      "robots": {
+        "fetch": {
+          "requested_url": "https://kravebeauty.com/robots.txt",
+          "final_url": "https://kravebeauty.com/robots.txt",
+          "status": 200,
+          "outcome": "error",
+          "error_code": "endpoint_disabled",
+          "elapsed_ms": 179,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "text/plain; charset=utf-8",
+            "cf-ray": "a3ef6e63fdfdba47-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=40;desc=\"gc:1\", db;dur=11, db_async;dur=2.621, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", theme;desc=\"142812807243\", pageType;desc=\"robots\", servedBy;desc=\"tvcx\", requestID;desc=\"dd994da3-5e65-4f8c-adbb-4cd75c1ef410-1790060411\", _y;desc=\"00000000-0000-0000-5000-000000000000\", _s;desc=\"00000000-0000-0000-5000-000000000000\", _cmp;desc=\"3.ampS_USVA_t_t_QF8JGTjGSIuKbtVeNX55Aw\", _ye;desc=\"1821618011\", _se;desc=\"1790062211\", compressionLevel;desc=\"5\"",
+            "x-request-id": "dd994da3-5e65-4f8c-adbb-4cd75c1ef410-1790060411",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 3622
+        },
+        "policy": "rules_read",
+        "evaluation": {
+          "agent_token_used": "mozilla",
+          "crawl_delay": null,
+          "request_rate": "",
+          "allows": {
+            "/products.json": true
+          },
+          "mentions_products_json": false,
+          "n_lines": 116
+        }
+      },
+      "meta": {
+        "fetch": {
+          "requested_url": "https://kravebeauty.com/meta.json",
+          "final_url": "https://kravebeauty.com/meta.json",
+          "status": 200,
+          "outcome": "error",
+          "error_code": "endpoint_disabled",
+          "elapsed_ms": 127,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef6e756b87f272-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=60, db;dur=25, db_async;dur=3.81, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"fqzd\", requestID;desc=\"5a5ef7f0-cd1c-4962-893e-0c7efb636ee8-1790060414\", _y;desc=\"00000000-0000-0000-5000-000000000000\", _s;desc=\"00000000-0000-0000-5000-000000000000\", _cmp;desc=\"3.ampS_USVA_t_t_QF8JGTjGSIuKbtVeNX55Aw_%7B%7D\", _ye;desc=\"1821618014\", _se;desc=\"1790062214\", compressionLevel;desc=\"5\", compressionTime;dur=0.193",
+            "x-request-id": "5a5ef7f0-cd1c-4962-893e-0c7efb636ee8-1790060414",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 851
+        },
+        "currency": "USD",
+        "shop_name": "KraveBeauty",
+        "country": "US",
+        "is_shopify_by_header": true,
+        "keys": [
+          "city",
+          "country",
+          "currency",
+          "description",
+          "domain",
+          "id",
+          "money_format",
+          "myshopify_domain",
+          "name",
+          "offers_shop_pay_installments",
+          "province",
+          "published_collections_count",
+          "published_products_count",
+          "ships_to_countries",
+          "shopify_pay_enabled_card_brands",
+          "url"
+        ]
+      },
+      "limit1": {
+        "fetch": {
+          "requested_url": "https://kravebeauty.com/products.json?limit=1",
+          "final_url": "https://kravebeauty.com/products.json?limit=1",
+          "status": 200,
+          "outcome": "ok",
+          "error_code": null,
+          "elapsed_ms": 124,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef6e89c840ba47-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=57;desc=\"gc:3\", db;dur=11, db_async;dur=8.935, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"65p2\", requestID;desc=\"a700e696-d2e1-44dd-adfc-c1c138e309e9-1790060417\", _y;desc=\"00000000-0000-0000-5000-000000000000\", _s;desc=\"00000000-0000-0000-5000-000000000000\", _cmp;desc=\"3.ampS_USVA_t_t_QF8JGTjGSIuKbtVeNX55Aw_%7B%7D\", _ye;desc=\"1821618017\", _se;desc=\"1790062217\", compressionLevel;desc=\"5\", compressionTime;dur=0.3",
+            "x-request-id": "a700e696-d2e1-44dd-adfc-c1c138e309e9-1790060417",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 5994
+        },
+        "n_products": 1
+      },
+      "pages": {
+        "page1": {
+          "fetch": {
+            "requested_url": "https://kravebeauty.com/products.json?limit=250&page=1",
+            "final_url": "https://kravebeauty.com/products.json?limit=250&page=1",
+            "status": 200,
+            "outcome": "ok",
+            "error_code": null,
+            "elapsed_ms": 147,
+            "headers": {
+              "server": "cloudflare",
+              "powered-by": "Shopify",
+              "content-type": "application/json; charset=utf-8",
+              "cf-ray": "a3ef6e979a7cba47-IAD",
+              "cf-cache-status": "DYNAMIC",
+              "server-timing": "processing;dur=83;desc=\"gc:3\", db;dur=12, db_async;dur=6.8, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"mpmn\", requestID;desc=\"8b5bcbde-ec62-4693-9bd8-44ba74ba13df-1790060419\", _y;desc=\"00000000-0000-0000-5000-000000000000\", _s;desc=\"00000000-0000-0000-5000-000000000000\", _cmp;desc=\"3.ampS_USVA_t_t_QF8JGTjGSIuKbtVeNX55Aw_%7B%7D\", _ye;desc=\"1821618019\", _se;desc=\"1790062219\", compressionLevel;desc=\"5\", compressionTime;dur=3.615",
+              "x-request-id": "8b5bcbde-ec62-4693-9bd8-44ba74ba13df-1790060419",
+              "x-frame-options": "DENY"
+            },
+            "redirect_hops": [],
+            "body_bytes": 229258
+          },
+          "n_products": 40,
+          "stats": {
+            "n_products": 40,
+            "n_variants": 60,
+            "product_ids_sample": [
+              8038489620555,
+              7398468190283,
+              7398474514507,
+              8000139722827,
+              7608362991691
+            ],
+            "product_ids_count": 40,
+            "available_key_present_pct": 100.0,
+            "compare_at_key_present_pct": 100.0,
+            "compare_at_non_null_pct": 48.33,
+            "inventory_quantity_present_pct": 0.0,
+            "variant_updated_at_present_pct": 100.0,
+            "product_image_present_pct": 100.0,
+            "product_published_at_present_pct": 100.0,
+            "product_updated_at_present_pct": 100.0,
+            "price_parse_ok": 60,
+            "price_parse_fail": 0,
+            "price_parse_fail_pct": 0.0,
+            "zero_price_variants": 0,
+            "price_value_types": {
+              "str": 60
+            },
+            "variant_currency_field_seen": null
+          }
+        },
+        "page2": {
+          "fetch": {
+            "requested_url": "https://kravebeauty.com/products.json?limit=250&page=2",
+            "final_url": "https://kravebeauty.com/products.json?limit=250&page=2",
+            "status": 200,
+            "outcome": "ok",
+            "error_code": null,
+            "elapsed_ms": 139,
+            "headers": {
+              "server": "cloudflare",
+              "powered-by": "Shopify",
+              "content-type": "application/json; charset=utf-8",
+              "cf-ray": "a3ef6ea7cefcf272-IAD",
+              "cf-cache-status": "DYNAMIC",
+              "server-timing": "processing;dur=45, db;dur=9, db_async;dur=6.547, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"cjb7\", requestID;desc=\"ec9c2a00-8d19-467a-9f0f-7bc1f2b31a12-1790060422\", _y;desc=\"00000000-0000-0000-5000-000000000000\", _s;desc=\"00000000-0000-0000-5000-000000000000\", _cmp;desc=\"3.ampS_USVA_t_t_QF8JGTjGSIuKbtVeNX55Aw_%7B%7D\", _ye;desc=\"1821618022\", _se;desc=\"1790062222\", compressionLevel;desc=\"5\", compressionTime;dur=0.064",
+              "x-request-id": "ec9c2a00-8d19-467a-9f0f-7bc1f2b31a12-1790060422",
+              "x-frame-options": "DENY"
+            },
+            "redirect_hops": [],
+            "body_bytes": 15
+          },
+          "n_products": 0,
+          "stats": {
+            "n_products": 0,
+            "n_variants": 0,
+            "product_ids_sample": [],
+            "product_ids_count": 0,
+            "available_key_present_pct": null,
+            "compare_at_key_present_pct": null,
+            "compare_at_non_null_pct": null,
+            "inventory_quantity_present_pct": null,
+            "variant_updated_at_present_pct": null,
+            "product_image_present_pct": null,
+            "product_published_at_present_pct": null,
+            "product_updated_at_present_pct": null,
+            "price_parse_ok": 0,
+            "price_parse_fail": 0,
+            "price_parse_fail_pct": null,
+            "zero_price_variants": 0,
+            "price_value_types": {},
+            "variant_currency_field_seen": null
+          },
+          "empty_page": true
+        }
+      },
+      "since_id_probe": {
+        "fetch": {
+          "requested_url": "https://kravebeauty.com/products.json?limit=250&since_id=10932049684",
+          "final_url": "https://kravebeauty.com/products.json?limit=250&since_id=10932049684",
+          "status": 200,
+          "outcome": "ok",
+          "error_code": null,
+          "elapsed_ms": 107,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef6ebb9ecff272-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=35, db;dur=7, db_async;dur=2.711, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"jxn4\", requestID;desc=\"c29a7f7d-4c98-4187-8682-5ae07856d323-1790060425\", _y;desc=\"00000000-0000-0000-5000-000000000000\", _s;desc=\"00000000-0000-0000-5000-000000000000\", _cmp;desc=\"3.ampS_USVA_t_t_QF8JGTjGSIuKbtVeNX55Aw_%7B%7D\", _ye;desc=\"1821618025\", _se;desc=\"1790062225\", compressionLevel;desc=\"5\"",
+            "x-request-id": "c29a7f7d-4c98-4187-8682-5ae07856d323-1790060425",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 229258
+        },
+        "anchor_id": 10932049684,
+        "first_ids": [
+          8038489620555,
+          7398468190283,
+          7398474514507,
+          8000139722827,
+          7608362991691
+        ],
+        "identical_to_page1_head": true,
+        "interpretation": "IGNORED (same head as page 1) \u2014 confirms no cursor pagination"
+      },
+      "www_variant": {
+        "host_tried": "www.kravebeauty.com",
+        "fetch": {
+          "requested_url": "https://www.kravebeauty.com/products.json?limit=1",
+          "final_url": "https://www.kravebeauty.com/products.json?limit=1",
+          "status": 200,
+          "outcome": "ok",
+          "error_code": null,
+          "elapsed_ms": 204,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef6ece284124ca-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=39, db;dur=8, db_async;dur=4.178, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"qpjv\", requestID;desc=\"bf22078d-feb8-410e-9c65-4017373eddbe-1790060428\", _y;desc=\"00000000-0000-0000-5000-000000000000\", _s;desc=\"00000000-0000-0000-5000-000000000000\", _cmp;desc=\"3.ampS_USVA_t_t_QF8JGTjGSIuKbtVeNX55Aw_%7B%7D\", _ye;desc=\"1821618028\", _se;desc=\"1790062228\", compressionLevel;desc=\"5\", compressionTime;dur=0.246",
+            "x-request-id": "bf22078d-feb8-410e-9c65-4017373eddbe-1790060428",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 5994
+        }
+      },
+      "field_stats": {
+        "n_products": 40,
+        "n_variants": 60,
+        "product_ids_sample": [
+          8038489620555,
+          7398468190283,
+          7398474514507,
+          8000139722827,
+          7608362991691
+        ],
+        "product_ids_count": 40,
+        "available_key_present_pct": 100.0,
+        "compare_at_key_present_pct": 100.0,
+        "compare_at_non_null_pct": 48.33,
+        "inventory_quantity_present_pct": 0.0,
+        "variant_updated_at_present_pct": 100.0,
+        "product_image_present_pct": 100.0,
+        "product_published_at_present_pct": 100.0,
+        "product_updated_at_present_pct": 100.0,
+        "price_parse_ok": 60,
+        "price_parse_fail": 0,
+        "price_parse_fail_pct": 0.0,
+        "zero_price_variants": 0,
+        "price_value_types": {
+          "str": 60
+        },
+        "variant_currency_field_seen": null
+      },
+      "page_repeat_detected": null,
+      "verdict": "feed_ok",
+      "notes": [
+        "Catalog ended with an empty products array at page 2 (a COMPLETE run in production terms)."
+      ],
+      "pagination": {
+        "pages_fetched": 2,
+        "total_products_seen": 40,
+        "ended_on_empty_page": true,
+        "last_page_was_full": false,
+        "page_repeat_at": null,
+        "completeness": "complete",
+        "exceeds_cap": false
+      }
+    },
+    {
+      "domain": "herbivorebotanicals.com",
+      "collection_handle": "",
+      "tier": "small",
+      "feed_path": "/products.json",
+      "probed_at": "2026-09-22T07:00:31+00:00",
+      "robots": {
+        "fetch": {
+          "requested_url": "https://herbivorebotanicals.com/robots.txt",
+          "final_url": "https://www.herbivorebotanicals.com/robots.txt",
+          "status": 200,
+          "outcome": "error",
+          "error_code": "endpoint_disabled",
+          "elapsed_ms": 199,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "text/plain; charset=utf-8",
+            "cf-ray": "a3ef6eedbd61172b-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=41;desc=\"gc:2\", db;dur=9, db_async;dur=2.43, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", theme;desc=\"147150209142\", pageType;desc=\"robots\", servedBy;desc=\"vgk5\", requestID;desc=\"241768e3-da79-41b9-beaf-79e13e7dd35d-1790060433\", _y;desc=\"418a07fe-12f1-4502-acb5-e54ae75d84ce\", _s;desc=\"2f4b86a5-ebc9-4fea-82d5-644637da1468\", _cmp;desc=\"3.AMPS_USVA_f_f_qFQ7o9lHTCSq8wJCbmeYSw\", _ye;desc=\"1821618033\", _se;desc=\"1790062233\", compressionLevel;desc=\"5\"",
+            "x-request-id": "241768e3-da79-41b9-beaf-79e13e7dd35d-1790060433",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [
+            {
+              "from": "https://herbivorebotanicals.com/robots.txt",
+              "status": 301,
+              "location": "https://www.herbivorebotanicals.com/robots.txt"
+            }
+          ],
+          "body_bytes": 3668
+        },
+        "policy": "rules_read",
+        "evaluation": {
+          "agent_token_used": "mozilla",
+          "crawl_delay": null,
+          "request_rate": "",
+          "allows": {
+            "/products.json": true
+          },
+          "mentions_products_json": false,
+          "n_lines": 116
+        }
+      },
+      "meta": {
+        "fetch": {
+          "requested_url": "https://herbivorebotanicals.com/meta.json",
+          "final_url": "https://herbivorebotanicals.com/meta.json",
+          "status": 200,
+          "outcome": "error",
+          "error_code": "endpoint_disabled",
+          "elapsed_ms": 121,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef6eff0a13e5eb-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=49;desc=\"gc:3\", db;dur=12, db_async;dur=2.955, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"fgww\", requestID;desc=\"33f0c1a2-08e2-4ee5-8a5a-f13fcb5b2438-1790060436\", _y;desc=\"418a07fe-12f1-4502-acb5-e54ae75d84ce\", _s;desc=\"2f4b86a5-ebc9-4fea-82d5-644637da1468\", _cmp;desc=\"3.AMPS_USVA_f_f_qFQ7o9lHTCSq8wJCbmeYSw_%7B%7D\", _ye;desc=\"1821618036\", _se;desc=\"1790062236\", compressionLevel;desc=\"5\", compressionTime;dur=0.245",
+            "x-request-id": "33f0c1a2-08e2-4ee5-8a5a-f13fcb5b2438-1790060436"
+          },
+          "redirect_hops": [],
+          "body_bytes": 1816
+        },
+        "currency": "USD",
+        "shop_name": "Herbivore Botanicals",
+        "country": "US",
+        "is_shopify_by_header": true,
+        "keys": [
+          "city",
+          "country",
+          "currency",
+          "description",
+          "domain",
+          "id",
+          "money_format",
+          "myshopify_domain",
+          "name",
+          "offers_shop_pay_installments",
+          "province",
+          "published_collections_count",
+          "published_products_count",
+          "ships_to_countries",
+          "shopify_pay_enabled_card_brands",
+          "url"
+        ]
+      },
+      "limit1": {
+        "fetch": {
+          "requested_url": "https://herbivorebotanicals.com/products.json?limit=1",
+          "final_url": "https://herbivorebotanicals.com/products.json?limit=1",
+          "status": 200,
+          "outcome": "ok",
+          "error_code": null,
+          "elapsed_ms": 119,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef6f0c5b15c8a8-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=46;desc=\"gc:1\", db;dur=10, db_async;dur=4.749, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"jcfq\", requestID;desc=\"c2ce3777-2171-4270-810b-927aef739115-1790060438\", _y;desc=\"418a07fe-12f1-4502-acb5-e54ae75d84ce\", _s;desc=\"2f4b86a5-ebc9-4fea-82d5-644637da1468\", _cmp;desc=\"3.AMPS_USVA_f_f_qFQ7o9lHTCSq8wJCbmeYSw_%7B%7D\", _ye;desc=\"1821618038\", _se;desc=\"1790062238\", compressionLevel;desc=\"5\", compressionTime;dur=0.263",
+            "x-request-id": "c2ce3777-2171-4270-810b-927aef739115-1790060438"
+          },
+          "redirect_hops": [],
+          "body_bytes": 1826
+        },
+        "n_products": 1
+      },
+      "pages": {
+        "page1": {
+          "fetch": {
+            "requested_url": "https://herbivorebotanicals.com/products.json?limit=250&page=1",
+            "final_url": "https://herbivorebotanicals.com/products.json?limit=250&page=1",
+            "status": 200,
+            "outcome": "ok",
+            "error_code": null,
+            "elapsed_ms": 173,
+            "headers": {
+              "server": "cloudflare",
+              "powered-by": "Shopify",
+              "content-type": "application/json; charset=utf-8",
+              "cf-ray": "a3ef6f1fdc57c8a8-IAD",
+              "cf-cache-status": "DYNAMIC",
+              "server-timing": "processing;dur=92;desc=\"gc:7\", db;dur=14, db_async;dur=6.006, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"46qx\", requestID;desc=\"a85532ea-35af-4d14-bfac-91652385f29b-1790060441\", _y;desc=\"418a07fe-12f1-4502-acb5-e54ae75d84ce\", _s;desc=\"2f4b86a5-ebc9-4fea-82d5-644637da1468\", _cmp;desc=\"3.AMPS_USVA_f_f_qFQ7o9lHTCSq8wJCbmeYSw_%7B%7D\", _ye;desc=\"1821618041\", _se;desc=\"1790062241\", compressionLevel;desc=\"5\", compressionTime;dur=3.641",
+              "x-request-id": "a85532ea-35af-4d14-bfac-91652385f29b-1790060441"
+            },
+            "redirect_hops": [],
+            "body_bytes": 159735
+          },
+          "n_products": 51,
+          "stats": {
+            "n_products": 51,
+            "n_variants": 62,
+            "product_ids_sample": [
+              8055760584822,
+              7973610651766,
+              7921191518326,
+              7973723897974,
+              7973719900278
+            ],
+            "product_ids_count": 51,
+            "available_key_present_pct": 100.0,
+            "compare_at_key_present_pct": 100.0,
+            "compare_at_non_null_pct": 14.52,
+            "inventory_quantity_present_pct": 0.0,
+            "variant_updated_at_present_pct": 100.0,
+            "product_image_present_pct": 100.0,
+            "product_published_at_present_pct": 100.0,
+            "product_updated_at_present_pct": 100.0,
+            "price_parse_ok": 62,
+            "price_parse_fail": 0,
+            "price_parse_fail_pct": 0.0,
+            "zero_price_variants": 1,
+            "price_value_types": {
+              "str": 62
+            },
+            "variant_currency_field_seen": null
+          }
+        },
+        "page2": {
+          "fetch": {
+            "requested_url": "https://herbivorebotanicals.com/products.json?limit=250&page=2",
+            "final_url": "https://herbivorebotanicals.com/products.json?limit=250&page=2",
+            "status": 200,
+            "outcome": "ok",
+            "error_code": null,
+            "elapsed_ms": 119,
+            "headers": {
+              "server": "cloudflare",
+              "powered-by": "Shopify",
+              "content-type": "application/json; charset=utf-8",
+              "cf-ray": "a3ef6f329e25e5eb-IAD",
+              "cf-cache-status": "DYNAMIC",
+              "server-timing": "processing;dur=43;desc=\"gc:3\", db;dur=7, db_async;dur=5.849, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"nmrv\", requestID;desc=\"477a0cb7-d5ed-4ad4-8214-c5e784ba743d-1790060444\", _y;desc=\"418a07fe-12f1-4502-acb5-e54ae75d84ce\", _s;desc=\"2f4b86a5-ebc9-4fea-82d5-644637da1468\", _cmp;desc=\"3.AMPS_USVA_f_f_qFQ7o9lHTCSq8wJCbmeYSw_%7B%7D\", _ye;desc=\"1821618044\", _se;desc=\"1790062244\", compressionLevel;desc=\"5\", compressionTime;dur=0.074",
+              "x-request-id": "477a0cb7-d5ed-4ad4-8214-c5e784ba743d-1790060444"
+            },
+            "redirect_hops": [],
+            "body_bytes": 15
+          },
+          "n_products": 0,
+          "stats": {
+            "n_products": 0,
+            "n_variants": 0,
+            "product_ids_sample": [],
+            "product_ids_count": 0,
+            "available_key_present_pct": null,
+            "compare_at_key_present_pct": null,
+            "compare_at_non_null_pct": null,
+            "inventory_quantity_present_pct": null,
+            "variant_updated_at_present_pct": null,
+            "product_image_present_pct": null,
+            "product_published_at_present_pct": null,
+            "product_updated_at_present_pct": null,
+            "price_parse_ok": 0,
+            "price_parse_fail": 0,
+            "price_parse_fail_pct": null,
+            "zero_price_variants": 0,
+            "price_value_types": {},
+            "variant_currency_field_seen": null
+          },
+          "empty_page": true
+        }
+      },
+      "since_id_probe": {
+        "fetch": {
+          "requested_url": "https://herbivorebotanicals.com/products.json?limit=250&since_id=759925833846",
+          "final_url": "https://herbivorebotanicals.com/products.json?limit=250&since_id=759925833846",
+          "status": 200,
+          "outcome": "ok",
+          "error_code": null,
+          "elapsed_ms": 154,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef6f447fb3e5eb-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=83;desc=\"gc:2\", db;dur=9, db_async;dur=11.701, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"z9mm\", requestID;desc=\"8c0d9f9e-7865-41ad-b105-11765bcd6941-1790060447\", _y;desc=\"418a07fe-12f1-4502-acb5-e54ae75d84ce\", _s;desc=\"2f4b86a5-ebc9-4fea-82d5-644637da1468\", _cmp;desc=\"3.AMPS_USVA_f_f_qFQ7o9lHTCSq8wJCbmeYSw_%7B%7D\", _ye;desc=\"1821618047\", _se;desc=\"1790062247\", compressionLevel;desc=\"5\", compressionTime;dur=3.062",
+            "x-request-id": "8c0d9f9e-7865-41ad-b105-11765bcd6941-1790060447"
+          },
+          "redirect_hops": [],
+          "body_bytes": 159735
+        },
+        "anchor_id": 759925833846,
+        "first_ids": [
+          8055760584822,
+          7973610651766,
+          7921191518326,
+          7973723897974,
+          7973719900278
+        ],
+        "identical_to_page1_head": true,
+        "interpretation": "IGNORED (same head as page 1) \u2014 confirms no cursor pagination"
+      },
+      "www_variant": {
+        "host_tried": "www.herbivorebotanicals.com",
+        "fetch": {
+          "requested_url": "https://www.herbivorebotanicals.com/products.json?limit=1",
+          "final_url": "https://www.herbivorebotanicals.com/products.json?limit=1",
+          "status": 200,
+          "outcome": "ok",
+          "error_code": null,
+          "elapsed_ms": 146,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef6f558d14172b-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=59;desc=\"gc:4\", db;dur=14, db_async;dur=4.637, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"r67n\", requestID;desc=\"ee694178-a7a2-4ec3-886c-d1019319818e-1790060450\", _y;desc=\"418a07fe-12f1-4502-acb5-e54ae75d84ce\", _s;desc=\"2f4b86a5-ebc9-4fea-82d5-644637da1468\", _cmp;desc=\"3.AMPS_USVA_f_f_qFQ7o9lHTCSq8wJCbmeYSw_%7B%7D\", _ye;desc=\"1821618050\", _se;desc=\"1790062250\", compressionLevel;desc=\"5\", compressionTime;dur=0.294",
+            "x-request-id": "ee694178-a7a2-4ec3-886c-d1019319818e-1790060450"
+          },
+          "redirect_hops": [],
+          "body_bytes": 1826
+        }
+      },
+      "field_stats": {
+        "n_products": 51,
+        "n_variants": 62,
+        "product_ids_sample": [
+          8055760584822,
+          7973610651766,
+          7921191518326,
+          7973723897974,
+          7973719900278
+        ],
+        "product_ids_count": 51,
+        "available_key_present_pct": 100.0,
+        "compare_at_key_present_pct": 100.0,
+        "compare_at_non_null_pct": 14.52,
+        "inventory_quantity_present_pct": 0.0,
+        "variant_updated_at_present_pct": 100.0,
+        "product_image_present_pct": 100.0,
+        "product_published_at_present_pct": 100.0,
+        "product_updated_at_present_pct": 100.0,
+        "price_parse_ok": 62,
+        "price_parse_fail": 0,
+        "price_parse_fail_pct": 0.0,
+        "zero_price_variants": 1,
+        "price_value_types": {
+          "str": 62
+        },
+        "variant_currency_field_seen": null
+      },
+      "page_repeat_detected": null,
+      "verdict": "feed_ok",
+      "notes": [
+        "Catalog ended with an empty products array at page 2 (a COMPLETE run in production terms)."
+      ],
+      "pagination": {
+        "pages_fetched": 2,
+        "total_products_seen": 51,
+        "ended_on_empty_page": true,
+        "last_page_was_full": false,
+        "page_repeat_at": null,
+        "completeness": "complete",
+        "exceeds_cap": false
+      }
+    },
+    {
+      "domain": "saltandstone.com",
+      "collection_handle": "",
+      "tier": "small",
+      "feed_path": "/products.json",
+      "probed_at": "2026-09-22T07:00:52+00:00",
+      "robots": {
+        "fetch": {
+          "requested_url": "https://saltandstone.com/robots.txt",
+          "final_url": "https://www.saltandstone.com/robots.txt",
+          "status": 200,
+          "outcome": "error",
+          "error_code": "endpoint_disabled",
+          "elapsed_ms": 124,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "text/plain; charset=utf-8",
+            "cf-ray": "a3ef6f6f1b27c3b9-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=47;desc=\"gc:1\", db;dur=11, db_async;dur=1.267, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", theme;desc=\"140982943994\", pageType;desc=\"robots\", servedBy;desc=\"b48s\", requestID;desc=\"7d9482ff-0595-468f-a1bd-69037034dd63-1790060454\", _y;desc=\"bc666a58-a182-4591-a407-be8f045e581f\", _s;desc=\"7df367f7-6006-4ff1-aa26-1e1d6edd5d55\", _cmp;desc=\"3.AMPS_USVA_f_f_biC7ysi0S16o4EYihOzGtQ\", _ye;desc=\"1821618054\", _se;desc=\"1790062254\", compressionLevel;desc=\"5\"",
+            "x-request-id": "7d9482ff-0595-468f-a1bd-69037034dd63-1790060454",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [
+            {
+              "from": "https://saltandstone.com/robots.txt",
+              "status": 301,
+              "location": "https://www.saltandstone.com/robots.txt"
+            }
+          ],
+          "body_bytes": 5602
+        },
+        "policy": "rules_read",
+        "evaluation": {
+          "agent_token_used": "mozilla",
+          "crawl_delay": null,
+          "request_rate": "",
+          "allows": {
+            "/products.json": true
+          },
+          "mentions_products_json": false,
+          "n_lines": 183
+        }
+      },
+      "meta": {
+        "fetch": {
+          "requested_url": "https://saltandstone.com/meta.json",
+          "final_url": "https://saltandstone.com/meta.json",
+          "status": 200,
+          "outcome": "error",
+          "error_code": "endpoint_disabled",
+          "elapsed_ms": 115,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef6f7cbb58d6b3-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=50, db;dur=13, db_async;dur=2.733, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"kvh5\", requestID;desc=\"f7457288-b738-4011-9338-5192da63916f-1790060456\", _y;desc=\"bc666a58-a182-4591-a407-be8f045e581f\", _s;desc=\"7df367f7-6006-4ff1-aa26-1e1d6edd5d55\", _cmp;desc=\"3.AMPS_USVA_f_f_biC7ysi0S16o4EYihOzGtQ_%7B%7D\", _ye;desc=\"1821618056\", _se;desc=\"1790062256\", compressionLevel;desc=\"5\", compressionTime;dur=0.163",
+            "x-request-id": "f7457288-b738-4011-9338-5192da63916f-1790060456",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 696
+        },
+        "currency": "USD",
+        "shop_name": "SALT & STONE",
+        "country": "US",
+        "is_shopify_by_header": true,
+        "keys": [
+          "city",
+          "country",
+          "currency",
+          "description",
+          "domain",
+          "id",
+          "money_format",
+          "myshopify_domain",
+          "name",
+          "offers_shop_pay_installments",
+          "province",
+          "published_collections_count",
+          "published_products_count",
+          "ships_to_countries",
+          "shopify_pay_enabled_card_brands",
+          "url"
+        ]
+      },
+      "limit1": {
+        "fetch": {
+          "requested_url": "https://saltandstone.com/products.json?limit=1",
+          "final_url": "https://saltandstone.com/products.json?limit=1",
+          "status": 200,
+          "outcome": "ok",
+          "error_code": null,
+          "elapsed_ms": 145,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef6f8abda3d6b3-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=44;desc=\"gc:3\", db;dur=10, db_async;dur=4.154, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"2r8w\", requestID;desc=\"908dc978-9308-48d9-b380-c1b32d24e183-1790060458\", _y;desc=\"bc666a58-a182-4591-a407-be8f045e581f\", _s;desc=\"7df367f7-6006-4ff1-aa26-1e1d6edd5d55\", _cmp;desc=\"3.AMPS_USVA_f_f_biC7ysi0S16o4EYihOzGtQ_%7B%7D\", _ye;desc=\"1821618058\", _se;desc=\"1790062258\", compressionLevel;desc=\"5\", compressionTime;dur=0.167",
+            "x-request-id": "908dc978-9308-48d9-b380-c1b32d24e183-1790060458",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 1542
+        },
+        "n_products": 1
+      },
+      "pages": {
+        "page1": {
+          "fetch": {
+            "requested_url": "https://saltandstone.com/products.json?limit=250&page=1",
+            "final_url": "https://saltandstone.com/products.json?limit=250&page=1",
+            "status": 200,
+            "outcome": "ok",
+            "error_code": null,
+            "elapsed_ms": 106,
+            "headers": {
+              "server": "cloudflare",
+              "powered-by": "Shopify",
+              "content-type": "application/json; charset=utf-8",
+              "cf-ray": "a3ef6f9b8ec1d6b3-IAD",
+              "cf-cache-status": "DYNAMIC",
+              "server-timing": "processing;dur=31;desc=\"gc:3\", db;dur=7, db_async;dur=1.022, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"cmmm\", requestID;desc=\"ffdfb5f7-aa3f-4fea-b50d-5e82406db0f6-1790060461\", _y;desc=\"bc666a58-a182-4591-a407-be8f045e581f\", _s;desc=\"7df367f7-6006-4ff1-aa26-1e1d6edd5d55\", _cmp;desc=\"3.AMPS_USVA_f_f_biC7ysi0S16o4EYihOzGtQ_%7B%7D\", _ye;desc=\"1821618061\", _se;desc=\"1790062261\", compressionLevel;desc=\"5\"",
+              "x-request-id": "ffdfb5f7-aa3f-4fea-b50d-5e82406db0f6-1790060461",
+              "x-frame-options": "DENY"
+            },
+            "redirect_hops": [],
+            "body_bytes": 275832
+          },
+          "n_products": 46,
+          "stats": {
+            "n_products": 46,
+            "n_variants": 147,
+            "product_ids_sample": [
+              9455125004538,
+              9410654273786,
+              9381155766522,
+              9381084201210,
+              9379296018682
+            ],
+            "product_ids_count": 46,
+            "available_key_present_pct": 100.0,
+            "compare_at_key_present_pct": 100.0,
+            "compare_at_non_null_pct": 36.73,
+            "inventory_quantity_present_pct": 0.0,
+            "variant_updated_at_present_pct": 100.0,
+            "product_image_present_pct": 100.0,
+            "product_published_at_present_pct": 100.0,
+            "product_updated_at_present_pct": 100.0,
+            "price_parse_ok": 147,
+            "price_parse_fail": 0,
+            "price_parse_fail_pct": 0.0,
+            "zero_price_variants": 1,
+            "price_value_types": {
+              "str": 147
+            },
+            "variant_currency_field_seen": null
+          }
+        },
+        "page2": {
+          "fetch": {
+            "requested_url": "https://saltandstone.com/products.json?limit=250&page=2",
+            "final_url": "https://saltandstone.com/products.json?limit=250&page=2",
+            "status": 200,
+            "outcome": "ok",
+            "error_code": null,
+            "elapsed_ms": 126,
+            "headers": {
+              "server": "cloudflare",
+              "powered-by": "Shopify",
+              "content-type": "application/json; charset=utf-8",
+              "cf-ray": "a3ef6fa84d68d6b3-IAD",
+              "cf-cache-status": "DYNAMIC",
+              "server-timing": "processing;dur=46;desc=\"gc:1\", db;dur=9, db_async;dur=9.381, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"vj5j\", requestID;desc=\"3c659186-bfa6-4f54-8e05-6c521761eea7-1790060463\", _y;desc=\"bc666a58-a182-4591-a407-be8f045e581f\", _s;desc=\"7df367f7-6006-4ff1-aa26-1e1d6edd5d55\", _cmp;desc=\"3.AMPS_USVA_f_f_biC7ysi0S16o4EYihOzGtQ_%7B%7D\", _ye;desc=\"1821618063\", _se;desc=\"1790062263\", compressionLevel;desc=\"5\", compressionTime;dur=0.071",
+              "x-request-id": "3c659186-bfa6-4f54-8e05-6c521761eea7-1790060463",
+              "x-frame-options": "DENY"
+            },
+            "redirect_hops": [],
+            "body_bytes": 15
+          },
+          "n_products": 0,
+          "stats": {
+            "n_products": 0,
+            "n_variants": 0,
+            "product_ids_sample": [],
+            "product_ids_count": 0,
+            "available_key_present_pct": null,
+            "compare_at_key_present_pct": null,
+            "compare_at_non_null_pct": null,
+            "inventory_quantity_present_pct": null,
+            "variant_updated_at_present_pct": null,
+            "product_image_present_pct": null,
+            "product_published_at_present_pct": null,
+            "product_updated_at_present_pct": null,
+            "price_parse_ok": 0,
+            "price_parse_fail": 0,
+            "price_parse_fail_pct": null,
+            "zero_price_variants": 0,
+            "price_value_types": {},
+            "variant_currency_field_seen": null
+          },
+          "empty_page": true
+        }
+      },
+      "since_id_probe": {
+        "fetch": {
+          "requested_url": "https://saltandstone.com/products.json?limit=250&since_id=4784594124849",
+          "final_url": "https://saltandstone.com/products.json?limit=250&since_id=4784594124849",
+          "status": 200,
+          "outcome": "ok",
+          "error_code": null,
+          "elapsed_ms": 125,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef6fb4bc10d6b3-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=34;desc=\"gc:2\", db;dur=6, db_async;dur=0.851, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"q2wc\", requestID;desc=\"3b739b93-8650-4e57-924d-237a103a3bbc-1790060465\", _y;desc=\"bc666a58-a182-4591-a407-be8f045e581f\", _s;desc=\"7df367f7-6006-4ff1-aa26-1e1d6edd5d55\", _cmp;desc=\"3.AMPS_USVA_f_f_biC7ysi0S16o4EYihOzGtQ_%7B%7D\", _ye;desc=\"1821618065\", _se;desc=\"1790062265\", compressionLevel;desc=\"5\"",
+            "x-request-id": "3b739b93-8650-4e57-924d-237a103a3bbc-1790060465",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 275832
+        },
+        "anchor_id": 4784594124849,
+        "first_ids": [
+          9455125004538,
+          9410654273786,
+          9381155766522,
+          9381084201210,
+          9379296018682
+        ],
+        "identical_to_page1_head": true,
+        "interpretation": "IGNORED (same head as page 1) \u2014 confirms no cursor pagination"
+      },
+      "www_variant": {
+        "host_tried": "www.saltandstone.com",
+        "fetch": {
+          "requested_url": "https://www.saltandstone.com/products.json?limit=1",
+          "final_url": "https://www.saltandstone.com/products.json?limit=1",
+          "status": 200,
+          "outcome": "ok",
+          "error_code": null,
+          "elapsed_ms": 116,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef6fc8ebe2c3b9-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=47;desc=\"gc:6\", db;dur=14, db_async;dur=2.967, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"w5gl\", requestID;desc=\"7342a398-ffd2-4f62-b23b-4ce38f0d0ea9-1790060468\", _y;desc=\"bc666a58-a182-4591-a407-be8f045e581f\", _s;desc=\"7df367f7-6006-4ff1-aa26-1e1d6edd5d55\", _cmp;desc=\"3.AMPS_USVA_f_f_biC7ysi0S16o4EYihOzGtQ_%7B%7D\", _ye;desc=\"1821618068\", _se;desc=\"1790062268\", compressionLevel;desc=\"5\", compressionTime;dur=0.154",
+            "x-request-id": "7342a398-ffd2-4f62-b23b-4ce38f0d0ea9-1790060468",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 1542
+        }
+      },
+      "field_stats": {
+        "n_products": 46,
+        "n_variants": 147,
+        "product_ids_sample": [
+          9455125004538,
+          9410654273786,
+          9381155766522,
+          9381084201210,
+          9379296018682
+        ],
+        "product_ids_count": 46,
+        "available_key_present_pct": 100.0,
+        "compare_at_key_present_pct": 100.0,
+        "compare_at_non_null_pct": 36.73,
+        "inventory_quantity_present_pct": 0.0,
+        "variant_updated_at_present_pct": 100.0,
+        "product_image_present_pct": 100.0,
+        "product_published_at_present_pct": 100.0,
+        "product_updated_at_present_pct": 100.0,
+        "price_parse_ok": 147,
+        "price_parse_fail": 0,
+        "price_parse_fail_pct": 0.0,
+        "zero_price_variants": 1,
+        "price_value_types": {
+          "str": 147
+        },
+        "variant_currency_field_seen": null
+      },
+      "page_repeat_detected": null,
+      "verdict": "feed_ok",
+      "notes": [
+        "Catalog ended with an empty products array at page 2 (a COMPLETE run in production terms)."
+      ],
+      "pagination": {
+        "pages_fetched": 2,
+        "total_products_seen": 46,
+        "ended_on_empty_page": true,
+        "last_page_was_full": false,
+        "page_repeat_at": null,
+        "completeness": "complete",
+        "exceeds_cap": false
+      }
+    },
+    {
+      "domain": "versedskin.com",
+      "collection_handle": "",
+      "tier": "small",
+      "feed_path": "/products.json",
+      "probed_at": "2026-09-22T07:01:11+00:00",
+      "robots": {
+        "fetch": {
+          "requested_url": "https://versedskin.com/robots.txt",
+          "final_url": "https://versedskin.com/robots.txt",
+          "status": 200,
+          "outcome": "error",
+          "error_code": "endpoint_disabled",
+          "elapsed_ms": 195,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "text/plain; charset=utf-8",
+            "cf-ray": "a3ef6fd87eb3f26a-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=36;desc=\"gc:1\", db;dur=8, db_async;dur=2.592, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", theme;desc=\"160938164259\", pageType;desc=\"robots\", servedBy;desc=\"j45q\", requestID;desc=\"ce5e3de0-e106-4036-9a70-0206c95978dd-1790060471\", _y;desc=\"a53c597c-cd25-4ccb-be95-45669550568e\", _s;desc=\"f5a75a36-74f9-4f2c-8a67-07a4b1d0a3ac\", _cmp;desc=\"3.AMPS_USVA_f_f_r-544*feR72I3rmI1zlopA\", _ye;desc=\"1821618071\", _se;desc=\"1790062271\", compressionLevel;desc=\"5\", compressionTime;dur=0.277",
+            "x-request-id": "ce5e3de0-e106-4036-9a70-0206c95978dd-1790060471",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 3624
+        },
+        "policy": "rules_read",
+        "evaluation": {
+          "agent_token_used": "mozilla",
+          "crawl_delay": null,
+          "request_rate": "",
+          "allows": {
+            "/products.json": true
+          },
+          "mentions_products_json": false,
+          "n_lines": 116
+        }
+      },
+      "meta": {
+        "fetch": {
+          "requested_url": "https://versedskin.com/meta.json",
+          "final_url": "https://versedskin.com/meta.json",
+          "status": 200,
+          "outcome": "error",
+          "error_code": "endpoint_disabled",
+          "elapsed_ms": 136,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef6fe99f1ef322-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=47;desc=\"gc:1\", db;dur=16, db_async;dur=2.609, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"fqzd\", requestID;desc=\"8b541a50-0add-4e3e-a1b9-d85e50dffb6e-1790060473\", _y;desc=\"a53c597c-cd25-4ccb-be95-45669550568e\", _s;desc=\"f5a75a36-74f9-4f2c-8a67-07a4b1d0a3ac\", _cmp;desc=\"3.AMPS_USVA_f_f_r-544*feR72I3rmI1zlopA_%7B%7D\", _ye;desc=\"1821618073\", _se;desc=\"1790062273\", compressionLevel;desc=\"5\", compressionTime;dur=0.162",
+            "x-request-id": "8b541a50-0add-4e3e-a1b9-d85e50dffb6e-1790060473",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 638
+        },
+        "currency": "USD",
+        "shop_name": "Versed Skin",
+        "country": "US",
+        "is_shopify_by_header": true,
+        "keys": [
+          "city",
+          "country",
+          "currency",
+          "description",
+          "domain",
+          "id",
+          "money_format",
+          "myshopify_domain",
+          "name",
+          "offers_shop_pay_installments",
+          "province",
+          "published_collections_count",
+          "published_products_count",
+          "ships_to_countries",
+          "shopify_pay_enabled_card_brands",
+          "url"
+        ]
+      },
+      "limit1": {
+        "fetch": {
+          "requested_url": "https://versedskin.com/products.json?limit=1",
+          "final_url": "https://versedskin.com/products.json?limit=1",
+          "status": 200,
+          "outcome": "ok",
+          "error_code": null,
+          "elapsed_ms": 111,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef6ff72dbcf322-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=44;desc=\"gc:1\", db;dur=12, db_async;dur=3.831, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"248r\", requestID;desc=\"72181aad-fd0e-46f2-bcbd-9f6d9167685b-1790060476\", _y;desc=\"a53c597c-cd25-4ccb-be95-45669550568e\", _s;desc=\"f5a75a36-74f9-4f2c-8a67-07a4b1d0a3ac\", _cmp;desc=\"3.AMPS_USVA_f_f_r-544*feR72I3rmI1zlopA_%7B%7D\", _ye;desc=\"1821618076\", _se;desc=\"1790062276\", compressionLevel;desc=\"5\", compressionTime;dur=0.248",
+            "x-request-id": "72181aad-fd0e-46f2-bcbd-9f6d9167685b-1790060476",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 3620
+        },
+        "n_products": 1
+      },
+      "pages": {
+        "page1": {
+          "fetch": {
+            "requested_url": "https://versedskin.com/products.json?limit=250&page=1",
+            "final_url": "https://versedskin.com/products.json?limit=250&page=1",
+            "status": 200,
+            "outcome": "ok",
+            "error_code": null,
+            "elapsed_ms": 121,
+            "headers": {
+              "server": "cloudflare",
+              "powered-by": "Shopify",
+              "content-type": "application/json; charset=utf-8",
+              "cf-ray": "a3ef700a0b8af322-IAD",
+              "cf-cache-status": "DYNAMIC",
+              "server-timing": "processing;dur=31, db;dur=6, db_async;dur=2.438, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"nmrv\", requestID;desc=\"e783455d-3408-44ad-8ec3-a3561bec90f7-1790060479\", _y;desc=\"a53c597c-cd25-4ccb-be95-45669550568e\", _s;desc=\"f5a75a36-74f9-4f2c-8a67-07a4b1d0a3ac\", _cmp;desc=\"3.AMPS_USVA_f_f_r-544*feR72I3rmI1zlopA_%7B%7D\", _ye;desc=\"1821618079\", _se;desc=\"1790062279\", compressionLevel;desc=\"5\"",
+              "x-request-id": "e783455d-3408-44ad-8ec3-a3561bec90f7-1790060479",
+              "x-frame-options": "DENY"
+            },
+            "redirect_hops": [],
+            "body_bytes": 842236
+          },
+          "n_products": 76,
+          "stats": {
+            "n_products": 76,
+            "n_variants": 877,
+            "product_ids_sample": [
+              7272183889955,
+              7272184381475,
+              7265878212643,
+              7257549701155,
+              7266355773475
+            ],
+            "product_ids_count": 76,
+            "available_key_present_pct": 100.0,
+            "compare_at_key_present_pct": 100.0,
+            "compare_at_non_null_pct": 68.99,
+            "inventory_quantity_present_pct": 0.0,
+            "variant_updated_at_present_pct": 100.0,
+            "product_image_present_pct": 100.0,
+            "product_published_at_present_pct": 100.0,
+            "product_updated_at_present_pct": 100.0,
+            "price_parse_ok": 877,
+            "price_parse_fail": 0,
+            "price_parse_fail_pct": 0.0,
+            "zero_price_variants": 0,
+            "price_value_types": {
+              "str": 877
+            },
+            "variant_currency_field_seen": null
+          }
+        },
+        "page2": {
+          "fetch": {
+            "requested_url": "https://versedskin.com/products.json?limit=250&page=2",
+            "final_url": "https://versedskin.com/products.json?limit=250&page=2",
+            "status": 200,
+            "outcome": "ok",
+            "error_code": null,
+            "elapsed_ms": 113,
+            "headers": {
+              "server": "cloudflare",
+              "powered-by": "Shopify",
+              "content-type": "application/json; charset=utf-8",
+              "cf-ray": "a3ef701c2f45f26a-IAD",
+              "cf-cache-status": "DYNAMIC",
+              "server-timing": "processing;dur=40, db;dur=8, db_async;dur=3.366, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"cdjh\", requestID;desc=\"042b6ea2-1f4d-4659-8982-69299931afb9-1790060481\", _y;desc=\"a53c597c-cd25-4ccb-be95-45669550568e\", _s;desc=\"f5a75a36-74f9-4f2c-8a67-07a4b1d0a3ac\", _cmp;desc=\"3.AMPS_USVA_f_f_r-544*feR72I3rmI1zlopA_%7B%7D\", _ye;desc=\"1821618082\", _se;desc=\"1790062282\", compressionLevel;desc=\"5\", compressionTime;dur=0.164",
+              "x-request-id": "042b6ea2-1f4d-4659-8982-69299931afb9-1790060481",
+              "x-frame-options": "DENY"
+            },
+            "redirect_hops": [],
+            "body_bytes": 15
+          },
+          "n_products": 0,
+          "stats": {
+            "n_products": 0,
+            "n_variants": 0,
+            "product_ids_sample": [],
+            "product_ids_count": 0,
+            "available_key_present_pct": null,
+            "compare_at_key_present_pct": null,
+            "compare_at_non_null_pct": null,
+            "inventory_quantity_present_pct": null,
+            "variant_updated_at_present_pct": null,
+            "product_image_present_pct": null,
+            "product_published_at_present_pct": null,
+            "product_updated_at_present_pct": null,
+            "price_parse_ok": 0,
+            "price_parse_fail": 0,
+            "price_parse_fail_pct": null,
+            "zero_price_variants": 0,
+            "price_value_types": {},
+            "variant_currency_field_seen": null
+          },
+          "empty_page": true
+        }
+      },
+      "since_id_probe": {
+        "fetch": {
+          "requested_url": "https://versedskin.com/products.json?limit=250&since_id=7072843497507",
+          "final_url": "https://versedskin.com/products.json?limit=250&since_id=7072843497507",
+          "status": 200,
+          "outcome": "ok",
+          "error_code": null,
+          "elapsed_ms": 334,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef702b9cf2f322-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=242;desc=\"gc:18\", db;dur=6, db_async;dur=40.138, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"w5lf\", requestID;desc=\"9276af67-56a2-499b-b098-ff1e6df88f08-1790060484\", _y;desc=\"a53c597c-cd25-4ccb-be95-45669550568e\", _s;desc=\"f5a75a36-74f9-4f2c-8a67-07a4b1d0a3ac\", _cmp;desc=\"3.AMPS_USVA_f_f_r-544*feR72I3rmI1zlopA_%7B%7D\", _ye;desc=\"1821618084\", _se;desc=\"1790062284\", compressionLevel;desc=\"5\", compressionTime;dur=12.633",
+            "x-request-id": "9276af67-56a2-499b-b098-ff1e6df88f08-1790060484",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 842236
+        },
+        "anchor_id": 7072843497507,
+        "first_ids": [
+          7272183889955,
+          7272184381475,
+          7265878212643,
+          7257549701155,
+          7266355773475
+        ],
+        "identical_to_page1_head": true,
+        "interpretation": "IGNORED (same head as page 1) \u2014 confirms no cursor pagination"
+      },
+      "www_variant": {
+        "host_tried": "www.versedskin.com",
+        "fetch": {
+          "requested_url": "https://www.versedskin.com/products.json?limit=1",
+          "final_url": "https://www.versedskin.com/products.json?limit=1",
+          "status": 200,
+          "outcome": "ok",
+          "error_code": null,
+          "elapsed_ms": 234,
+          "headers": {
+            "server": "cloudflare",
+            "powered-by": "Shopify",
+            "content-type": "application/json; charset=utf-8",
+            "cf-ray": "a3ef70402d93b9e3-IAD",
+            "cf-cache-status": "DYNAMIC",
+            "server-timing": "processing;dur=84;desc=\"gc:3\", db;dur=32, db_async;dur=7.799, asn;desc=\"14618\", edge;desc=\"IAD\", country;desc=\"US\", servedBy;desc=\"4gz2\", requestID;desc=\"b3df35ed-d5f1-40b3-a444-ad16a2c33110-1790060487\", _y;desc=\"a53c597c-cd25-4ccb-be95-45669550568e\", _s;desc=\"f5a75a36-74f9-4f2c-8a67-07a4b1d0a3ac\", _cmp;desc=\"3.AMPS_USVA_f_f_r-544*feR72I3rmI1zlopA_%7B%7D\", _ye;desc=\"1821618087\", _se;desc=\"1790062287\", compressionLevel;desc=\"5\", compressionTime;dur=0.295",
+            "x-request-id": "b3df35ed-d5f1-40b3-a444-ad16a2c33110-1790060487",
+            "x-frame-options": "DENY"
+          },
+          "redirect_hops": [],
+          "body_bytes": 3620
+        }
+      },
+      "field_stats": {
+        "n_products": 76,
+        "n_variants": 877,
+        "product_ids_sample": [
+          7272183889955,
+          7272184381475,
+          7265878212643,
+          7257549701155,
+          7266355773475
+        ],
+        "product_ids_count": 76,
+        "available_key_present_pct": 100.0,
+        "compare_at_key_present_pct": 100.0,
+        "compare_at_non_null_pct": 68.99,
+        "inventory_quantity_present_pct": 0.0,
+        "variant_updated_at_present_pct": 100.0,
+        "product_image_present_pct": 100.0,
+        "product_published_at_present_pct": 100.0,
+        "product_updated_at_present_pct": 100.0,
+        "price_parse_ok": 877,
+        "price_parse_fail": 0,
+        "price_parse_fail_pct": 0.0,
+        "zero_price_variants": 0,
+        "price_value_types": {
+          "str": 877
+        },
+        "variant_currency_field_seen": null
+      },
+      "page_repeat_detected": null,
+      "verdict": "feed_ok",
+      "notes": [
+        "Catalog ended with an empty products array at page 2 (a COMPLETE run in production terms)."
+      ],
+      "pagination": {
+        "pages_fetched": 2,
+        "total_products_seen": 76,
+        "ended_on_empty_page": true,
+        "last_page_was_full": false,
+        "page_repeat_at": null,
+        "completeness": "complete",
+        "exceeds_cap": false
+      }
+    }
+  ],
+  "egress": {
+    "ip": "3.237.194.81",
+    "reverse_dns": null,
+    "ipinfo": {
+      "ip": "3.220.149.31",
+      "hostname": "ec2-3-220-149-31.compute-1.amazonaws.com",
+      "city": "Ashburn",
+      "region": "Virginia",
+      "country": "US",
+      "org": "AS14618 Amazon.com, Inc.",
+      "timezone": "America/New_York"
+    }
+  },
+  "smtp": [
+    {
+      "host": "smtp.gmail.com",
+      "port": 587,
+      "tcp_connect": true,
+      "banner": "",
+      "tls": null,
+      "tls_version": null,
+      "error": null,
+      "connect_ms": 0,
+      "starttls_advertised": false,
+      "conclusive": false,
+      "assessment": "INCONCLUSIVE \u2014 TCP accepted but no SMTP greeting arrived. Typical of an egress firewall that permits only HTTP/HTTPS. Re-run on the production server; do not treat this as a pass or a fail."
+    },
+    {
+      "host": "smtp.gmail.com",
+      "port": 465,
+      "tcp_connect": true,
+      "banner": null,
+      "tls": null,
+      "tls_version": null,
+      "error": "SSLZeroReturnError: TLS/SSL connection has been closed (EOF) (_ssl.c:1152)",
+      "connect_ms": 0,
+      "conclusive": false,
+      "assessment": "INCONCLUSIVE \u2014 TCP accepted but no SMTP greeting arrived. Typical of an egress firewall that permits only HTTP/HTTPS. Re-run on the production server; do not treat this as a pass or a fail."
+    }
+  ],
+  "summary": {
+    "n_stores_probed": 7,
+    "n_feed_ok": 7,
+    "n_blocked_403_430": 0,
+    "n_rate_limited_429": 0,
+    "n_robots_disallowed": 0,
+    "domains_feed_ok": [
+      "colourpop.com",
+      "fentybeauty.com",
+      "theinkeylist.com",
+      "kravebeauty.com",
+      "herbivorebotanicals.com",
+      "saltandstone.com",
+      "versedskin.com"
+    ],
+    "domains_blocked": [],
+    "domains_rate_limited": [],
+    "domains_robots_disallowed": [],
+    "available_key_pct_min": 100.0,
+    "available_key_pct_max": 100.0,
+    "inventory_quantity_pct_min": 0.0,
+    "inventory_quantity_pct_max": 0.0,
+    "page_repeat_domains": [],
+    "n_admissible_feed_ok_and_robots_consent": 7,
+    "domains_robots_unreadable": [],
+    "domains_exceeds_cap": [
+      "colourpop.com",
+      "fentybeauty.com"
+    ],
+    "domains_complete_catalog": [
+      "theinkeylist.com",
+      "kravebeauty.com",
+      "herbivorebotanicals.com",
+      "saltandstone.com",
+      "versedskin.com"
+    ],
+    "inventory_quantity_exposed_anywhere": false,
+    "since_id_honoured_anywhere": false,
+    "verdict_note": "GO requires >=5 of 6 competitor stores at feed_ok DIRECTLY FROM THE PRODUCTION SERVER. A result produced anywhere else is a control measurement only and must not be used as the verdict."
+  }
+}

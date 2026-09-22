@@ -1,0 +1,33 @@
+# CompetitorTrack — Phase 0 STORE SET (final)
+#
+# Selected from tools/stores_candidates.txt after the robots.txt pre-screen.
+# All 7 returned HTTP 200 + valid JSON on /products.json and all 7 have a
+# robots.txt that ALLOWS the feed path (verified 2026-09-22).
+#
+# Dropped by the pre-screen:
+#   youthtothepeople.com  - HTTP 403 blocked (error_code=blocked)
+#   mytopicals.com        - HTTP 404 on /products.json (endpoint_disabled)
+#
+# Held in reserve (feed_ok, swap in if one of the 7 starts failing):
+#   glossier.com, kyliecosmetics.com, necessaire.com
+#
+# Format: domain [collection-handle]   # tier:<small|medium|large>
+
+# --- large / Shopify Plus ------------------------------------------------- #
+colourpop.com                 # tier:large
+fentybeauty.com               # tier:large
+
+# --- medium --------------------------------------------------------------- #
+theinkeylist.com              # tier:medium  GBP store - currency coverage
+kravebeauty.com               # tier:medium
+
+# --- small / indie -------------------------------------------------------- #
+herbivorebotanicals.com       # tier:small
+saltandstone.com              # tier:small
+
+# --- own-store stand-in --------------------------------------------------- #
+# The founder owns no Shopify store (he is building this to sell to merchants),
+# so P0's "plus the founder's own store" slot is filled by a stand-in. It is
+# used ONLY to produce own-store fixtures for the pg_trgm title-matching tests
+# in the AI insight layer. Recorded in docs/DECISIONS.md.
+versedskin.com                # tier:small  own-store stand-in
