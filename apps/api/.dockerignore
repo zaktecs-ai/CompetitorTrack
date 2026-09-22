@@ -1,0 +1,16 @@
+# Keep the build context small: the local virtualenv alone is hundreds of
+# megabytes, and every byte here is shipped to the Docker daemon on the A1.
+.venv
+venv
+__pycache__
+*.py[cod]
+.pytest_cache
+.ruff_cache
+.coverage
+coverage.xml
+htmlcov
+*.egg-info
+tests
+.env
+.env.*
+!.env.example

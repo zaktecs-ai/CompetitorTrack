@@ -1,0 +1,45 @@
+# Local development overrides (§A12).
+#
+# Compose auto-merges this file when it discovers compose files by name, i.e.
+# when you run `docker compose up -d --build` from this directory. It is NOT
+# merged when a file is named explicitly with -f, which is how deploy.sh invokes
+# Compose on the server — so this file can live in git without ever reaching
+# production.
+#
+# What it changes: plain HTTP on localhost (no certificates), insecure cookies
+# to match, the platform mailer switched to log-only, and PostgreSQL published
+# to 127.0.0.1 so the test suite can reach it from the host.
+
+services:
+  caddy:
+    environment:
+      # An http:// site address turns TLS off entirely — no ACME, no warnings.
+      SERVER_NAME: http://localhost
+      ACME_EMAIL: dev@localhost
+      ACME_CA: ""
+
+  api:
+    environment:
+      PUBLIC_ORIGIN: http://localhost
+      # Only tolerated because the origin is localhost; the api refuses this
+      # combination on any other origin.
+      COOKIE_SECURE: "false"
+      # Empty: the api logs verification and reset links at INFO instead of
+      # sending them (§A8.6).
+      PLATFORM_SMTP_URL: ""
+      PLATFORM_FROM_EMAIL: ""
+      LOG_LEVEL: DEBUG
+
+  scheduler:
+    environment:
+      PUBLIC_ORIGIN: http://localhost
+      COOKIE_SECURE: "false"
+      PLATFORM_SMTP_URL: ""
+      PLATFORM_FROM_EMAIL: ""
+      LOG_LEVEL: DEBUG
+
+  db:
+    # Loopback only — never 0.0.0.0, which would expose the database to the
+    # network on a machine with a public IP.
+    ports:
+      - "127.0.0.1:5432:5432"

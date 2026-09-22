@@ -1,0 +1,8 @@
+# Test and lint tooling. Not installed into the runtime image.
+-r requirements.txt
+
+pytest==9.1.1
+pytest-asyncio==1.4.0
+pytest-cov==7.1.0                 # the §A13 coverage gate lands in P3; the plumbing is here
+respx==0.23.1                     # httpx mocking, used from P3 onward
+ruff==0.16.8

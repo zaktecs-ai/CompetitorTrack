@@ -1,0 +1,129 @@
+# CompetitorTrack — production compose file (§A12).
+#
+# Five services on one host. Compose Specification, so no `version:` key.
+#
+# Usage on the server (explicit -f, which is what keeps the local development
+# override out of production — Compose only auto-merges the override when it
+# discovers files by name):
+#
+#     docker compose -f docker-compose.yml build
+#     docker compose -f docker-compose.yml run --rm api alembic upgrade head
+#     docker compose -f docker-compose.yml up -d --remove-orphans
+#
+# Usage locally (auto-merges docker-compose.override.yml: plain HTTP on
+# localhost, insecure cookies, the database published to 127.0.0.1):
+#
+#     docker compose up -d --build
+#
+# Environment comes from deploy/.env — copy it from ../.env.example.
+
+name: competitortrack
+
+x-logging: &logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "5"
+
+services:
+  # TLS termination and routing. The browser talks to exactly one origin, so
+  # there is no CORS and cookies need no cross-site handling (§A1).
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp" # HTTP/3
+    environment:
+      SERVER_NAME: ${SERVER_NAME:?set SERVER_NAME in deploy/.env (see .env.example)}
+      ACME_EMAIL: ${ACME_EMAIL:?set ACME_EMAIL in deploy/.env (see .env.example)}
+      # Empty means production Let's Encrypt; the Caddyfile supplies that as the
+      # default. Keep the staging URL here until go-live (§A12).
+      ACME_CA: ${ACME_CA:-}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data # certificates and ACME account keys live here
+      - caddy_config:/config
+    depends_on:
+      api:
+        condition: service_started
+      web:
+        condition: service_started
+    logging: *logging
+
+  # Next.js server. Serves HTML and JS only and never calls the API
+  # server-side, so it holds no secrets (§A11).
+  web:
+    build:
+      context: ../apps/web
+    image: competitortrack-web:latest
+    restart: unless-stopped
+    environment:
+      NEXT_TELEMETRY_DISABLED: ${NEXT_TELEMETRY_DISABLED:-1}
+    expose:
+      - "3000"
+    logging: *logging
+
+  # FastAPI. Runs no scheduled jobs (§A2).
+  api:
+    build:
+      context: ../apps/api
+    image: competitortrack-api:latest
+    restart: unless-stopped
+    # The whole file is passed rather than 21 explicit mappings: the [api]
+    # section is already kept honest by tools/check_env_example.py, and
+    # Settings ignores the keys it does not know (D1.4).
+    env_file:
+      - .env
+    expose:
+      - "8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    stop_grace_period: 30s
+    logging: *logging
+
+  # Same image, different entrypoint. Owns every background job, and is a
+  # singleton by advisory lock rather than by compose scaling (§A6.11).
+  scheduler:
+    build:
+      context: ../apps/api
+    image: competitortrack-api:latest
+    restart: unless-stopped
+    command: ["python", "-m", "app.scheduler"]
+    env_file:
+      - .env
+    depends_on:
+      db:
+        condition: service_healthy
+    # The api image's healthcheck probes :8000, which this process does not
+    # serve. Liveness for the scheduler is the heartbeat behind /api/health.
+    healthcheck:
+      disable: true
+    stop_grace_period: 30s
+    logging: *logging
+
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:?set POSTGRES_USER in deploy/.env}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in deploy/.env}
+      POSTGRES_DB: ${POSTGRES_DB:?set POSTGRES_DB in deploy/.env}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      # $$ escapes the variable so Compose leaves it for the shell inside the
+      # container rather than interpolating it from deploy/.env.
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    logging: *logging
+
+volumes:
+  pgdata:
+  caddy_data:
+  caddy_config:

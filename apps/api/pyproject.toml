@@ -1,0 +1,45 @@
+[project]
+name = "competitortrack-api"
+version = "0.1.0"
+description = "CompetitorTrack API and scheduler"
+requires-python = ">=3.12"
+
+# Runtime dependencies are pinned in requirements.txt and installed with pip in
+# the image build. This file carries tool configuration only — nothing builds or
+# publishes this package.
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = ["migrations/versions"]
+
+[tool.ruff.lint]
+select = [
+  "E",    # pycodestyle errors
+  "F",    # pyflakes
+  "W",    # pycodestyle warnings
+  "I",    # import sorting
+  "UP",   # pyupgrade
+  "B",    # bugbear
+  "C4",   # comprehensions
+  "SIM",  # simplify
+  "ASYNC",# async pitfalls (blocking calls in coroutines)
+  "T20",  # no print() in application code — structured logging only (§A12)
+  "BLE",  # no bare `except Exception` without a stated reason
+  "S",    # bandit: the scraper handles untrusted input and user-supplied hosts
+  "RUF",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["T20", "S101", "S105", "S106"]  # asserts and obvious fake secrets
+"migrations/env.py" = ["T20"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+markers = [
+  "db: test needs a live PostgreSQL (set DATABASE_URL; CT_REQUIRE_DB=1 forbids skipping)",
+]
