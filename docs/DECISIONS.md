@@ -225,3 +225,287 @@ only if a material share of target stores begin disallowing the token.
 `PUBLIC_ORIGIN` once a domain exists, and the `/bot` page it advertises must be
 live before production traffic — otherwise the UA points at nothing, which is
 worse than an anonymous one.
+
+## Phase 1
+
+### D1.1 — P0 reached `main` through a pull request, not a push
+
+**Context.** The P1 brief said to read `README.md`, `docs/PHASE0_FINDINGS.md` and
+`docs/DECISIONS.md` "from main". They were not there: `main` held a single commit
+(`899a552 chore: initialise repository`) with a stale README claiming P0 was still
+awaiting the production run. All four P0 commits lived on
+`phase0/validation-spike`.
+
+**Decision.** Merge `phase0/validation-spike` into `main` through a PR before
+starting P1, then branch `p1/skeleton` off `main`.
+
+**Rationale.** `main` is what every later phase prompt will read, what CI runs on
+and what `deploy.sh <sha>` checks out. A phase that begins by reading the wrong
+tree begins by making the wrong decisions. A merge commit (not squash) keeps the
+four P0 commits and their original SHAs intact, which matters because
+`PHASE0_FINDINGS.md` cites them as provenance.
+
+**Consequence.** Every phase from here ends with its branch merged to `main`, so
+"read it from main" stays true.
+
+---
+
+### D1.2 — `publicsuffixlist` with private-section rules (discharges D0.6)
+
+**Context.** D0.6 recorded that the probe's registrable-domain heuristic — last
+two labels plus a small allow-list — **must not ship**, and tracked a real Public
+Suffix List implementation as a P1 requirement.
+
+**Decision.** `publicsuffixlist==1.0.2.20260921`, wrapped in
+`apps/api/app/net/domains.py`. The dataset ships inside the wheel, so there is no
+network access at import and no refresh job; the pinned version *is* the dataset
+version, refreshed deliberately like any other dependency.
+`privatesuffix()` is used rather than the ICANN-only view.
+
+**Rationale for the private section.** It puts the boundary below
+`myshopify.com`, so `one.myshopify.com` and `two.myshopify.com` are correctly
+*different* sites. For a redirect-follow decision the tighter boundary is the
+safe one: the cost of being too tight is a rejected store, the cost of being too
+loose is following a 3xx off-site.
+
+**Consequence.** §A6.3's redirect classifier (P3) calls
+`same_registrable_domain()` and must never re-implement the comparison. The three
+same-domain redirects Phase 0 actually recorded — `www.herbivorebotanicals.com`,
+`www.saltandstone.com`, `uk.theinkeylist.com` — are unit tests, alongside the
+foreign-redirect cases (`store.com` → `store.com.evil.net`) that the heuristic
+would have got wrong.
+
+---
+
+### D1.3 — D0.9 is discharged by module layout, not by a comment
+
+**Context.** D0.9: the probe applied one success contract to every endpoint, so
+healthy 200s from `/robots.txt` and `/meta.json` were recorded as
+`endpoint_disabled` on all seven stores. The decision ends "a shared 'classify
+any response' helper is how this defect would reappear in `apps/api`".
+
+**Decision.** `apps/api/app/scraper/__init__.py` exists in P1 containing only a
+docstring that names the three separate classifiers P3 must write
+(`classify_feed.py`, `classify_meta.py`, `classify_robots.py`), states what
+"success" means for each, and says plainly that a generic classifier
+re-introduces the Phase 0 defect. No scraping code is written in P1.
+
+**Rationale.** A constraint recorded only in `DECISIONS.md` is a constraint
+nobody reads while writing `scraper/`. Put where the code will be written, it is
+read by whoever is about to break it.
+
+---
+
+### D1.4 — `env_file` for the api and scheduler, explicit `environment` elsewhere
+
+**Context.** The `[api]` section has 21 variables and both the `api` and
+`scheduler` service need all of them.
+
+**Decision.** Those two services take `env_file: .env`; `db`, `caddy` and `web`
+take explicit `environment:` mappings.
+
+**Rationale.** 42 lines of YAML repeating what `.env.example` already documents
+would drift, and the drift would be silent. It is not silent for the `[api]`
+section specifically, because `tools/check_env_example.py` fails CI when the
+file and `Settings` disagree. `Settings` is `extra="ignore"`, so the handful of
+non-api variables in the file are harmless to the process.
+
+**Consequence.** The api container's environment also contains `POSTGRES_*` and
+the backup paths. Nothing reads them, and `POSTGRES_PASSWORD` is already inside
+`DATABASE_URL`, so no new secret is exposed.
+
+---
+
+### D1.5 — "empty `ACME_CA` means production" is expressed as a Caddyfile default
+
+**Context.** §A12 says an empty `ACME_CA` means production Let's Encrypt and
+the staging URL is used during setup. But `acme_ca` with an empty argument is a
+Caddyfile **syntax error** — Caddy would refuse to start, which on a fresh server
+looks exactly like a certificate problem.
+
+**Decision.** The Caddyfile reads
+`acme_ca {$ACME_CA:https://acme-v02.api.letsencrypt.org/directory}`.
+
+**Consequence.** The specified semantics hold — clearing the variable yields
+production certificates — without a configuration that cannot parse.
+`.env.example` ships the staging URL, and clearing it is an explicit go-live step
+in P6.
+
+---
+
+### D1.6 — The scheduler's orphan-run reaper arrives with the table it reaps
+
+**Context.** §A6.11 has the scheduler mark leftover `scrape_runs` rows with
+`status='running'` as `aborted` immediately after taking the singleton lock.
+`scrape_runs` is created by P2's `0001`.
+
+**Decision.** P1's scheduler takes the lock and beats; the abort step is written
+in P2, in the same change that creates the table. The requirement is recorded in
+the module docstring so it cannot be forgotten.
+
+**Rationale.** The alternative — a guarded query against a table that may not
+exist — is code whose only purpose is to tolerate a state that lasts one phase.
+
+---
+
+### D1.7 — `migrations/env.py` reads `DATABASE_URL` directly, not through `Settings`
+
+**Context.** `Settings` requires `JWT_SECRET` and `MASTER_ENCRYPTION_KEYS`.
+`deploy.sh` runs `alembic upgrade head` in a one-shot container.
+
+**Decision.** `env.py` reads `os.environ["DATABASE_URL"]` and raises a message
+naming the compose command if it is missing.
+
+**Rationale.** A migration is not the application. Failing a schema upgrade
+because an unrelated secret is absent would be a self-inflicted outage during the
+exact five minutes of a deploy when nothing else should be able to go wrong.
+
+---
+
+### D1.8 — The whole dependency set is pinned in P1, and the image refuses source builds
+
+**Context.** §A3 claims every dependency has a manylinux aarch64 wheel and that
+"nothing compiles from source on the A1". Images are built on the server, so a
+missing wheel is discovered during a deploy.
+
+**Decision.** `apps/api/requirements.txt` pins the **complete** MVP runtime set
+now — including `httpx`, `pwdlib`, `PyJWT`, `slowapi`, `cryptography`,
+`aiosmtplib` and `google-genai`, which P1 does not import — each tagged with the
+phase that first uses it. The Dockerfile installs with `--only-binary=:all:`, and
+CI installs the same way.
+
+**Rationale.** It converts §A3's claim into a build-time assertion, and it
+converts it *now*: the first `docker compose build` on the A1 proves the whole
+MVP's wheel availability instead of P4 discovering that `google-genai` drags in
+something that needs a compiler. Verified locally: all runtime and dev pins
+resolve to wheels on cp312.
+
+---
+
+### D1.9 — The User-Agent is built from `PUBLIC_ORIGIN` at startup, and `/bot` ships now
+
+**Context.** D0.11 adopted the honest bot UA and left an open item: the string
+embedded the placeholder `https://competitortrack.example.com`, and the `/bot`
+page it advertises did not exist.
+
+**Decision.** `SCRAPER_USER_AGENT` holds a template containing at most the token
+`{PUBLIC_ORIGIN}`, which `Settings.user_agent` interpolates at startup;
+`PUBLIC_ORIGIN` itself is validated as scheme-plus-host. Any other `{…}`
+placeholder is rejected at boot. The static `/bot` page — what we fetch, how
+politely, and the exact `robots.txt` lines that stop us — ships in P1.
+
+**Rationale.** A named crawler pointing at a 404 is worse than an anonymous one.
+Both halves had to exist before P3 makes the first request, and both are cheap
+now.
+
+---
+
+### D1.10 — ESLint stays on 9.x
+
+**Context.** ESLint 10 is current and npm marks 9.x as unsupported.
+`eslint-config-next@16.3.5` declares `eslint >=9`, so 10 installs.
+
+**Decision.** Pin `eslint@^9.39.5`.
+
+**Evidence.** With ESLint 10 the lint run dies before reporting anything:
+`TypeError: Error while loading rule 'react/display-name':
+contextOrFilename.getFilename is not a function` — `eslint-plugin-react`, vendored
+inside `eslint-config-next`, uses an API ESLint 10 removed.
+
+**Consequence.** `npm install` prints a deprecation warning for eslint 9. A
+warning is preferable to a linter that cannot run. Revisit when
+`eslint-config-next` ships an ESLint 10-compatible plugin set.
+
+---
+
+### D1.11 — The four deploy scripts ship as loud stubs
+
+**Context.** P1's task list asks for `deploy/scripts/{deploy,rollback,backup,restore}.sh`
+"as documented stubs that fail loudly if unimplemented".
+
+**Decision.** Each script sets `set -euo pipefail`, prints the manual commands
+that do the same job, and exits 3. Each carries the full intended implementation
+as a numbered comment block taken from §A12. CI has **no** deploy job in P1.
+
+**Rationale.** A deploy script that has never run against the real server would
+be trusted on the day it matters. The manual sequence in `docs/DEPLOY.md` is short
+and reviewable; P6 implements the scripts and rehearses the backup/restore pair
+against a throwaway volume, which is the only way a backup stops being a rumour.
+
+---
+
+### D1.12 — Database-backed tests skip locally, never in CI
+
+**Context.** §A13 requires a real PostgreSQL. A developer without one would
+otherwise see a wall of errors.
+
+**Decision.** The `migrated_database` fixture connects (a real connection, not a
+TCP probe, so unix sockets work) and `pytest.skip`s when there is nothing there
+— unless `CT_REQUIRE_DB=1`, which CI sets, in which case it fails.
+
+**Rationale.** Skipping is a convenience for a laptop and a catastrophe in CI: a
+suite that silently drops its integration tests reports green while testing
+nothing.
+
+---
+
+### D1.13 — A missing heartbeat is unhealthy, not unknown-and-fine
+
+**Context.** §A12 specifies 503 from `/api/health` when the database fails or the
+heartbeat is older than five minutes. It does not say what a *missing* heartbeat
+row means — a database whose scheduler has never run.
+
+**Decision.** `scheduler: "unknown"` and HTTP **503**.
+
+**Rationale.** The endpoint answers "is the system doing its job?" and a
+scheduler that has never beaten is not. It self-resolves within a minute of a
+healthy start, because the heartbeat job's first run is immediate rather than one
+interval away. `/api/health/ready` stays 200 throughout, so the deploy gate is
+unaffected.
+
+---
+
+### D1.14 — `COOKIE_SECURE=false` is refused off localhost
+
+**Context.** The flag exists for the local HTTP override.
+
+**Decision.** `Settings` raises at startup if `COOKIE_SECURE` is false while
+`PUBLIC_ORIGIN` is not `http://localhost` or `http://127.0.0.1`.
+
+**Rationale.** The failure mode of the alternative is session cookies travelling
+in clear on a public domain, caused by one leftover line in `.env`. Refusing to
+boot is a better outcome than serving.
+
+---
+
+### D1.15 — `app.jobsearchpk.site`, and its DNS is currently broken
+
+**Context.** P1 needs a hostname for `SERVER_NAME`, `PUBLIC_ORIGIN` and the
+crawler's `/bot` URL. The founder owns `jobsearchpk.site`, bought from Hostinger.
+
+**Decision.** `app.jobsearchpk.site`. A subdomain keeps the apex free for a
+marketing site later, and certificate issuance is per-hostname either way.
+
+**Finding, recorded because it blocks the server-side Definition of Done.**
+The domain is registered and paid until 2027-05-20 (registrar: Hostinger), but
+its nameservers are delegated to `ns1/ns2/ns3.digitalocean.com`, and those
+servers answer `REFUSED` — the zone does not exist in any DigitalOcean account.
+So nothing under `jobsearchpk.site` resolves at all today: no A record, no SOA,
+no NS. HTTP-01 certificate issuance cannot work until that is fixed.
+`docs/DEPLOY.md` §2 has the two-step fix (point the nameservers back to
+Hostinger, then add the A record).
+
+---
+
+### D1.16 — `typescript@^5`, the version Next 16.3.5 scaffolds with
+
+**Context.** TypeScript 7 is released. `create-next-app@16.3.5` scaffolds
+`typescript: ^5`.
+
+**Decision.** Keep `^5`, along with the rest of the canonical scaffold's
+versions (`react` 19.2.8, `@types/node` ^20, `eslint-config-next` 16.3.5).
+
+**Rationale.** The frontend's job in this project is to be boring. Matching the
+versions the framework is tested against costs nothing here and removes a whole
+class of "is it us or the toolchain?" questions. Revisit when the Next scaffold
+moves.
