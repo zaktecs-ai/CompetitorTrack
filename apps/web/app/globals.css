@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/* P1 sets the register the dashboard will keep: high contrast, dense but calm,
+   no decorative animation (§A11). The component library (shadcn/ui) and the real
+   design tokens arrive with the frontend in P5 — this is the floor, not the
+   finished surface. */
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", monospace;
+
+  --color-ink-950: oklch(0.15 0.01 250);
+  --color-ink-700: oklch(0.42 0.012 250);
+  --color-ink-500: oklch(0.58 0.012 250);
+  --color-ink-200: oklch(0.9 0.006 250);
+  --color-ink-50: oklch(0.98 0.003 250);
+
+  --color-ok: oklch(0.6 0.13 155);
+  --color-warn: oklch(0.72 0.15 75);
+  --color-bad: oklch(0.58 0.19 25);
+}
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-ink-50);
+  color: var(--color-ink-950);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}

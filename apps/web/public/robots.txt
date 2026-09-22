@@ -1,0 +1,8 @@
+# CompetitorTrack's own site. The crawler we operate is described at /bot.
+User-agent: *
+Allow: /bot
+Disallow: /api/
+Disallow: /settings
+Disallow: /competitors
+Disallow: /alerts
+Disallow: /admin
