@@ -10,8 +10,8 @@ digest of meaningful changes with optional AI commentary.
 
 | Phase | State |
 |---|---|
-| **P0 — validation spike** | 🟡 In progress — probe built and self-validated; **awaiting the run from the production IP** |
-| P1 — skeleton & deploy | Not started |
+| **P0 — validation spike** | ✅ **Complete — verdict GO.** 7/7 stores reachable directly from the production IP; no proxy required. See [`docs/PHASE0_FINDINGS.md`](docs/PHASE0_FINDINGS.md). |
+| P1 — skeleton & deploy | ⬜ Ready to start |
 | P2 — data model & seed | Not started |
 | P3 — scraper & trigger engine | Not started |
 | P4 — notifications & AI | Not started |
@@ -24,7 +24,9 @@ digest of meaningful changes with optional AI commentary.
 > the approach changes — and finding that out in a day beats finding it out in six
 > weeks.
 
-**👉 To move P0 forward, follow [`tools/README_PHASE0.md`](tools/README_PHASE0.md).**
+The gate is passed. P0's probe and run instructions stay in the repo as
+[`tools/README_PHASE0.md`](tools/README_PHASE0.md) — re-run them if a store starts
+failing, if the server moves, or before pointing production at a proxy.
 
 ---
 
@@ -37,7 +39,9 @@ tools/
   stores_phase0.txt        The 7-store Phase 0 set (6 competitors + 1 stand-in)
   stores_candidates.txt    The 12 candidates the set was screened from
 docs/
-  PHASE0_FINDINGS.md       Findings so far; verdict field reads PENDING
+  PHASE0_FINDINGS.md       Verdict GO, with the full production evidence
+  phase0_evidence.production.md
+                           Verbatim console + JSON blocks from the server runs
   DECISIONS.md             Every choice the spec left open, with its rationale
   phase0_results.control-dev-ip.json
                            Control run — from a build-sandbox AWS IP, NOT the verdict
@@ -48,28 +52,34 @@ Nothing here imports a web framework or touches a database. That starts in P1.
 
 ---
 
-## Findings already settled
+## What Phase 0 established
 
-These come from the feed's format and the merchants' own configuration, so they do
-not depend on which IP we ask from — they are usable now. Full detail and sample
-sizes in [`docs/PHASE0_FINDINGS.md`](docs/PHASE0_FINDINGS.md).
+Measured on the production host (Oracle A1, AS31898, Frankfurt) across 7 stores,
+2,350 products and 1,796 variants. Full detail in
+[`docs/PHASE0_FINDINGS.md`](docs/PHASE0_FINDINGS.md).
 
-- **`inventory_quantity` is not exposed** on `/products.json` — 0 of 1,796 variants.
-  It can never be a trigger input.
+- **Direct egress works. No proxy needed.** 7/7 stores returned 200 + valid JSON on
+  both a browser UA and an honest bot UA. Zero blocks, zero 429s — including ~120
+  requests inside 5 minutes from one datacenter IP. This retires the project's
+  largest unmeasured risk.
+- **`/products.json` is not geo-localised.** All 7 page-1 responses were
+  **byte-identical** between a US-East IP and a Frankfurt IP. Answered without a
+  proxy, on stronger evidence than the planned proxy diff would have given.
+- **Gmail SMTP is reachable** on 587 (STARTTLS) and 465 (implicit), TLSv1.3.
+- **`inventory_quantity` is not exposed** — 0 of 1,796 variants. It can never be a
+  trigger input.
 - **`available` is present on 100%** of variants, so stock tracking is viable.
 - **Prices are decimal strings**, and **10 of 1,796 variants are priced `0`** — the
   divide-by-zero guard is load-bearing on real data, not theoretical.
-- **`since_id` is ignored**; `page=N` is the only pagination the storefront feed has.
+- **`since_id` is ignored**; `page=N` is the only pagination the feed has.
 - **2 of 6 competitor stores exceed the 1,000-product cap** (both Shopify Plus
-  brands), so collection scoping is on the critical path of onboarding — not an
-  edge case.
-- **robots.txt allows the feed on all 7 stores**; no store declared a `Crawl-delay`.
+  brands), so collection scoping sits on the critical path of onboarding — not in
+  the edge cases.
+- **robots.txt allows the feed on all 7**, under both agent tokens; no store
+  declared a `Crawl-delay`.
 
-Still open, and answerable only from the server: whether those stores return `200`
-from the Oracle A1 IP, which User-Agent fares better, and whether the box can reach
-Gmail on 587/465.
-
----
+Two probe defects were found and fixed during the phase, and one artifact defect is
+documented rather than hidden — see `DECISIONS.md` D0.9.
 
 ## Ground rules this repo follows
 
